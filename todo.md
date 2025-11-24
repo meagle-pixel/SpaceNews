@@ -6,3 +6,4 @@
 - Prévilegier les max-width pour le responsive
 - Je modifie cette ligne
 - et cette ligne 
+-puis celli-ci
