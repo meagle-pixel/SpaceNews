@@ -1,36 +1,39 @@
-const planets = [
-  "Mercury",
-  "Venus",
-  "Earth",
-  "Mars",
-  "Jupiter",
-  "Saturn",
-  "Uranus",
-  "Neptune",
-];
+async function afficherPlanetes() {
+  const apiUrl = "https://api.api-ninjas.com/v1/planets";
+  const apiKey = "AR8OsTVJdP3da+XsLsRQ1A==dS0QmDvtepXP5xO2";
 
-planets.forEach((name) => {
-  fetch(`https://api.api-ninjas.com/v1/planets?name=${name}`, {
-    headers: {
-      "X-Api-Key": "AR8OsTVJdP3da+XsLsRQ1A==dS0QmDvtepXP5xO2",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
+try {
+  const response = await fetch(apiUrl, {
+    headers: { 
+      'X-Api-Key': apiKey
+  }
+ });
 
-      const planet = data[0];
-      const container = document.getElementById("planet-info");
-      container.innerHTML += `
-            <h2>${planet.name}</h2>
-            <p>Mass: ${planet.mass}</p>
-            <p>Radius: ${planet.radius}</p>
-            <p>Period: ${planet.period}</p>
-            <p>Semi-major axis: ${planet.semi_major_axis}</p>
-            <hr>
-        `;
-    });
-});
+  const data = await response.json();
+  console.log("Planètes reçues :", data);
+
+  // Dans le but de l'afficher dans le HTML
+
+  const container = document.getElementById("planet-info");
+  container.innerHTML = "";
+
+  data.forEach(planete => {
+    const p = document.createElement("p");
+    p.textContent = planete.name;
+    container.appendChild(p);
+  });
+
+} catch (error) {
+  console.error("Erreur", error);
+  alert("Impossible de récupérer les données");
+}
+}
+afficherPlanetes();
+
+
+
+
+
 
 // FORMULAIRE
 
@@ -45,18 +48,23 @@ form.addEventListener("submit", function (e) {
   const mobile = document.getElementById("mobile").value.trim();
   const message = document.getElementById("textarea").value.trim();
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+  const mobilePattern = /^[0-9]{10}$/;
 
   if (!lastName || !firstName || !email || !message) {
     alert("Veuillez remplir tous les champs obligatoires !");
     return;
   }
 
-  console.log({
-    lastName, firstName, email, mobile, message
-  });
+  if (!emailPattern.test(email)) {
+    alert("Veuillez enter une adresse mail valide");
+    return;
+  }
 
-  alert("Formulaire complété avec succés !")
-  form.reset ();
+  if (mobile && !mobilePattern.test(mobile)) {
+    alert("Votre numéro de téléphone doit contenir des chiffres (1,2,3...)")
+    return;
+  }
 
+  alert("Formulaire complété avec succés !");
+  form.reset();
 });
