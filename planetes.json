@@ -1,12 +1,12 @@
 [
     {
-        "id":"",
-        "name":"",
-        "description": "",
-        "category": "",
-        "date":"",
-        "author":"",
-        "link":"",
-        "imageUrl":""
+        "id":"test",
+        "name":"test",
+        "description": "test",
+        "category": "test",
+        "date":"test",
+        "author":"test",
+        "link":"test",
+        "imageUrl":"test"
     }
 ]
