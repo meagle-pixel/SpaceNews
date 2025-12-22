@@ -522,6 +522,35 @@ header.header-solaire {
 }
 
 
+#planetes-system {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+#planetes-system img {
+  width: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border 0.2s;
+}
+
+#planetes-system img:hover {
+  border: 2px solid #00f;
+}
+
+#info-planete {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+
+
+
+
+
 
 
 

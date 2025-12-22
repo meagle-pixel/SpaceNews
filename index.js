@@ -99,8 +99,12 @@ function showErrorOrSuccess(msg, type = "error") {
 
 // page 4 Systeme solaire
 
-const sysSolaire = document.getElementById("planetContainer");
+const containerS = document.getElementById('planetes-system');
+const info = document.getElementById('info-planete');
 
-async function chargerPlanete() {
-  
+async function afficherPlanetes() {
+  try {
+    const response = await fetch("planetes.json");
+    const planetes = await response.json();
+  }
 }
