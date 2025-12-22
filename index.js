@@ -42,25 +42,25 @@ form.addEventListener("submit", function (e) {
   }
 
   if (!isValid) {
-    showError("Veuillez remplir tous les champs obligatoires !");
+    showErrorOrSuccess("Veuillez remplir tous les champs obligatoires !");
     return;
   }
 
   if (!emailPattern.test(email)) {
     document.getElementById("email").classList.add("error");
-    showError("Veuillez entrer une adresse mail valide");
+    showErrorOrSuccess("Veuillez entrer une adresse mail valide");
     return;
   }
 
   if (mobile && !mobilePattern.test(mobile)) {
     document.getElementById("mobile").classList.add("error");
-    showError(
+    showErrorOrSuccess(
       "Votre numéro de téléphone doit contenir des chiffres (1,2,3...)"
     );
     return;
   }
 
-  showError("Formulaire complété avec succés !", "success");
+  showErrorOrSuccess("Formulaire complété avec succés !", "success");
   form.reset();
 });
 
@@ -73,7 +73,7 @@ inputs.forEach((input) => {
   });
 });
 
-function showError(msg, type = "error") {
+function showErrorOrSuccess(msg, type = "error") {
   const formMessage = document.getElementById("form-message");
   const formText = document.getElementById("formText");
   const formIcon = document.getElementById("form-icon");
@@ -101,4 +101,6 @@ function showError(msg, type = "error") {
 
 const sysSolaire = document.getElementById("planetContainer");
 
-async function chargerPlanete() {}
+async function chargerPlanete() {
+  
+}
