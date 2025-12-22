@@ -48,17 +48,19 @@ form.addEventListener("submit", function (e) {
 
   if (!emailPattern.test(email)) {
     document.getElementById("email").classList.add("error");
-    showError("Veuillez enter une adresse mail valide");
+    showError("Veuillez entrer une adresse mail valide");
     return;
   }
 
   if (mobile && !mobilePattern.test(mobile)) {
     document.getElementById("mobile").classList.add("error");
-    showError("Votre numéro de téléphone doit contenir des chiffres (1,2,3...)");
+    showError(
+      "Votre numéro de téléphone doit contenir des chiffres (1,2,3...)"
+    );
     return;
   }
 
-  showError("Formulaire complété avec succés !");
+  showError("Formulaire complété avec succés !", "success");
   form.reset();
 });
 
@@ -71,11 +73,23 @@ inputs.forEach((input) => {
   });
 });
 
-function showError(msg) {
+function showError(msg, type = "error") {
   const formMessage = document.getElementById("form-message");
   const formText = document.getElementById("formText");
+  const formIcon = document.getElementById("form-icon");
 
   formText.textContent = msg;
+
+  formMessage.classList.remove("error", "success");
+  formMessage.classList.add(type);
+
+  if (type === "success") {
+    formIcon.src = "images/succes.png";
+  } else {
+    formIcon.src = "images/traverser.png";
+    formIcon.alt = "logo erreur";
+  }
+
   formMessage.style.display = "flex";
 
   setTimeout(() => {
@@ -83,3 +97,8 @@ function showError(msg) {
   }, 3000);
 }
 
+// page 4 Systeme solaire
+
+const sysSolaire = document.getElementById("planetContainer");
+
+async function chargerPlanete() {}

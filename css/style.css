@@ -419,10 +419,6 @@ nav {
     border-bottom: 2px solid red;
 }
 
-.container_contact form input.good {
-    border-bottom: 2px solid rgb(11, 136, 4);
-}
-
 .container_contact form input::placeholder {
     color: white;
 }
@@ -482,25 +478,57 @@ nav {
   bottom: 20px;          
   left: 50%;             
   transform: translateX(-50%);
-  background-color: rgba(255,0,0,0.9); 
-  color: white;
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 15px;
   display: none;  
   gap: 15px;
+  z-index: 9999; 
+  color: white;   
 }
+
+#form-message.error {
+  background-color: rgba(255,0,0,0.9);
+}
+
+#form-message.success {
+  background-color: #2ecc71;
+}
+
+
 
 #form-icon {
     width: 24px;
     height: 24px;
 }
 
-
 /* FOOTER */
 footer.footer-contact {
     background: #1c05a377;
 }
+
+
+/* Page 4 - Système solaire */
+
+body.body-solaire {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER PAGE SYSTEME SOLAIRE */
+
+header.header-solaire {
+    background: rgba(7, 0, 0, 0.84);
+}
+
+
+
+
+
+
+
+
+
 
 /* Querries Page 1 */
 
