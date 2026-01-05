@@ -106,12 +106,30 @@ function showErrorOrSuccess(msg, type = "error") {
 const url = "http://127.0.0.1:5500/js/data/planetes.json";
 const containerS = document.getElementById("planetes-system");
 const info = document.getElementById("info-planete");
+const filtre = document.getElementById("filtre-planetes");
+let planetesData = [];
+
+// filtre.addEventListener("change", (e)=> {
+//   let filtrerValue = filtre.value;
+
+//   let filtrerplanet = planetesData.filter((p) => {
+//     if (filtrerValue === "all") return true;
+//     if (filtrerValue === "tellurique") return p.type.toLowerCase().includes("tellurique");
+//     if (filtrerValue === "gazeuse") return p.type.toLowerCase().includes("gazeuse");
+//     if (filtrerValue === "glace") return p.type.toLowerCase().includes("glace");
+//     if (filtrerValue === "lunes") return p.lunes > 0;
+//   });
+
+//   containerS.innerHTML = "";  // La je vide le conteneur
+
+
 
 if (containerS) {
   async function afficherPlanetes() {
     try {
       const response = await fetch(url);
       const data = await response.json();
+      planetesData = data.planetes;
 
       data.planetes.forEach((p) => {
         const article = document.createElement("article");
@@ -123,7 +141,7 @@ if (containerS) {
           </div>
         `;
 
-        // 🔹 CLIC SUR LA PLANÈTE
+        //  CLIC SUR LA PLANÈTE
         article.addEventListener("click", () => {
           info.innerHTML = `
            <button id="close-info" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #ff9500; font-size: 30px; cursor: pointer; font-weight: bold;">&times;</button>
@@ -137,13 +155,12 @@ if (containerS) {
             <p>Lune(s) : ${p.lunes}</p>
           `;
 
-            info.addEventListener("click", (e) => {
-              if (e.target.id === "close-info") {
-                info.innerHTML = "";
-                document.querySelectorAll(".art").forEach(a => a.classList.remove("selected"));
-              }
-            })
-
+          const closeBtn = document.getElementById("close-info");
+          closeBtn.addEventListener("click", (e) => {
+            if (e.target.id === "close-info") {
+              info.innerHTML = "";
+            }
+          });
         });
 
         containerS.appendChild(article);

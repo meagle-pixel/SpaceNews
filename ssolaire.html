@@ -17,7 +17,7 @@
           <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="#">Nos articles</a></li>
-            <li><a href="ssolaire.html">Système solaire</a></li>
+            <li><a href="ssolaire.html">Planétarium</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -25,9 +25,21 @@
     </header>
 
     <main id="main-solaire">
+
+      <select id="filtre-planetes">
+        <option value="all">Toutes</option>
+        <option value="tellurique">Telluriques</option>
+        <option value="gazeuse">Gazeuses</option>
+        <option value="glace">Géantes de glace</option>
+        <option value="lunes">Avec lunes</option>
+
+
+
+      </select>
       <h1 id="h1_solaire">Planètes du système solaire</h1>
       <div id="planetes-system"></div>
       <div id="info-planete"></div>
+    
     </main>
 
     <script src="js/index.js"></script>

@@ -511,10 +511,6 @@ footer.footer-contact {
 
 
 
-
-
-
-
 /* PAGE 4 - Système solaire */
 
 body.body-solaire {
@@ -531,15 +527,21 @@ body.body-solaire {
    background: black;
 }
 
+#h1_solaire {
+    text-align: center;
+    color: white;
+}
+
 #planetes-system {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .art {
-    padding: 20px;
+    padding: 10px;
     width: fit-content;
     /* permet à un élément de prendre uniquement la place nécessaire à son contenu. */
 }
@@ -564,16 +566,18 @@ body.body-solaire {
 
 #info-planete {
   position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centré à l'écran */
-  width: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block; 
+  margin: 50px auto 0 auto; /* Centré horizontalement avec auto */
   max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.9); /* Plus opaque pour mieux lire */
+  width: 90%; 
+  background-color: rgba(0, 0, 0, 0.9);
   color: #ff9500;
   padding: 20px 30px;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 20px;
+  font-size: 16px;
   box-shadow: 0 0 50px rgba(255, 149, 0, 0.5);
 }
 
@@ -586,10 +590,6 @@ article.art {
 }
 
 
-#h1_solaire {
-    text-align: center;
-    color: white;
-}
 
 
 
