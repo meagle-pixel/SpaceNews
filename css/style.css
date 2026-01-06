@@ -517,26 +517,32 @@ body.body-solaire {
 /* Filtre page planétarium */
 
 #filtre-planetes {
-    margin-top: 10px;
-    border-radius: 20px;
-    font-size: 24px;
-    display: block;
-    margin-left: auto;
-    margin-right: 20px;
-    padding-left: 10px;
-}
-
-#filtre-planetes:hover {
-    background: rgb(192, 107, 4);
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+  padding-left: 10px;
+  color: white;
+  background: rgba(180, 70, 1, 0.257);
 }
 
 #filtre-planetes option {
-    font-size: 16px;
+  font-size: 16px;
+  background: black;
 }
 
 #h1_solaire {
+  font-size: 32px;
+  font-weight: 300;
+  color: #5b7a9e;
   text-align: center;
-  color: white;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #a78d88;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 #planetes-system {
@@ -646,33 +652,32 @@ article.art {
 
 /* Querry page Planetarium */
 @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     @media screen and (max-width: 768px) {
-    @media screen and (max-width: 768px) {
-    #filtre-planetes {
+      #filtre-planetes {
         display: block;
         margin: 0 auto; /* Centre horizontalement */
         position: relative;
         top: 10px; /* Ajustez selon la distance sous le header */
+      }
     }
-}
-}
+  }
 
-    #info-planet {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow-y: auto;
-        z-index: 1000;
-        background-color: #fff;
-    }
-    
-    .container-article #close-info {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
-    }
-}
+  #info-planet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    background-color: #fff;
+  }
 
+  .container-article #close-info {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+}

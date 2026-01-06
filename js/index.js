@@ -2,7 +2,6 @@
 
 const form = document.querySelector("form");
 
-//  Vérifiez que le formulaire existe avant d'ajouter l'événement
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -101,6 +100,9 @@ function showErrorOrSuccess(msg, type = "error") {
   }, 3000);
 }
 
+
+
+
 // PAGE 4 SYSTEME SOLAIRE
 
 const url = "http://127.0.0.1:5500/js/data/planetes.json";
@@ -186,6 +188,5 @@ if (containerS && filtre) {
       console.error("Erreur lors du chargement :", error);
     }
   }
-
   chargerDonnees();
 }
