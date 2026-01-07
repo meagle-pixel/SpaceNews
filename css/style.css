@@ -533,16 +533,22 @@ body.body-solaire {
   background: black;
 }
 
+#titre_filtre {
+  text-align: center;
+}
+
 #h1_solaire {
+  display: inline-block;
+  text-align: center;
   font-size: 32px;
   font-weight: 300;
-  color: #5b7a9e;
-  text-align: center;
+  color: #be5b05;
   letter-spacing: 8px;
   text-transform: uppercase;
   border-bottom: 3px solid #a78d88;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   margin-bottom: 40px;
+  backdrop-filter: blur(3px);
 }
 
 #planetes-system {
@@ -555,16 +561,14 @@ body.body-solaire {
 
 .art {
   padding: 10px;
-  width: fit-content;
-  /* permet à un élément de prendre uniquement la place nécessaire à son contenu. */
+  width: fit-content; /* permet à un élément de prendre uniquement la place nécessaire à son contenu. */
 }
 
 .art img {
   width: 200px;
   cursor: pointer;
   border-radius: 50%;
-  aspect-ratio: 1/1;
-  /* sert à forcer un élément à rester parfaitement carré.*/
+  aspect-ratio: 1/1; /* sert à forcer un élément à rester parfaitement carré.*/
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -650,7 +654,7 @@ article.art {
   }
 }
 
-/* Querry page Planetarium */
+/* Querry page 5 Planetarium */
 @media screen and (max-width: 768px) {
   @media screen and (max-width: 768px) {
     @media screen and (max-width: 768px) {
