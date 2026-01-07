@@ -1,5 +1,4 @@
 // ********** FORMULAIRE **********
-
 console.log(window.location);
 
 
@@ -108,7 +107,7 @@ function showErrorOrSuccess(msg, type = "error") {
 
 // PAGE 4 SYSTEME SOLAIRE
 
-const url = window.location.href + `Nouvel-exo-nicolas-bis/js/data/planetes.json`;
+const url = window.location.origin + `/js/data/planetes.json`;
 const containerS = document.getElementById("planetes-system");
 const info = document.getElementById("info-planete");
 const filtre = document.getElementById("filtre-planetes");
