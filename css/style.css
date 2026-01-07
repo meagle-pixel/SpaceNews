@@ -303,6 +303,57 @@ h2 {
   padding: 5px;
 }
 
+
+/* PAGE "Nos articles" */
+
+#bg_articles {
+  background-color: white;
+}
+
+.tittle_page {
+  text-align: center;
+}
+
+.all_items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px; 
+  justify-content: center;
+}
+
+.all_items article {
+  flex: 1 1 calc(25% - 20px); /* 4 articles par ligne (25% chacun) */
+  max-width: 400px; 
+}
+
+.all_items article img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* PAGE 3 CONTACT */
 
 body.body-contact {
