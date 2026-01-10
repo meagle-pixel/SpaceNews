@@ -1,31 +1,43 @@
-# Mon projet fil rouge - Afpa
+# SpaceNews – Projet fil rouge AFPA
 
-## Présentation
+## Description du projet
 
-Ce projet consiste à poursuivre le développement de mon site web
+**SpaceNews** est un site web dédié à la publication d’articles d’actualité liés à l’astronomie et au domaine spatial.  
+Ce projet est réalisé dans le cadre du **projet fil rouge**, avec pour objectif de mettre en pratique les bases du développement web sur la partie front-end.
 
-## Objectifs
+---
 
-Continuer sur mon site web "SpaceNews" qui consiste à publier des articles d'actualité sur l'astronomie et le domaine spatial.
+## Compétences visées
 
-***SpaceNews***, un site dédié à la publication d’articles d’actualité liés à l’astronomie et au domaine spatial.
+### HTML
+- Structurer une page web de manière sémantique
+- Organiser le contenu (titres, sections, articles, images)
+- Mettre en place une navigation claire
 
-## Objectifs
+### CSS
+- Mettre en forme une interface web
+- Utiliser Flexbox et/ou Grid
+- Gérer le positionnement des éléments
+- Adapter l’affichage aux différents écrans (responsive design)
 
-- Améliorer le code existant (HTML / CSS) si nécessaire.
-- Ajouter de nouvelles cartes présentant différentes planètes directement sur la page.
-- Enrichir le contenu avec de nouveaux articles.
-- Optimiser la structure du site pour une meilleure lisibilité.
-- Tout le maquettage, design, les parties.
+### JavaScript
+- Manipuler le DOM
+- Gérer les événements utilisateur (`addEventListener`)
+- Utiliser des conditions (`if / else`)
+- Utiliser des boucles (`for`, `forEach`)
+- Charger et exploiter des données au format JSON
 
-## Langages et logiciels prévus pour la création du site
+---
 
-- Figma
-- Visual Studio Code
-- HTML
-- CSS
-- JavaScript
+## Captures d’écran / Démonstrat
 
-- [ ] Retravailler le code HTML / CSS
-- [x] Créer la base du site SpaceNews
+- ### Le formulaire
+![Formulaire](images/screenformulaire.jpg)
 
+---
+- ### Le planétarium
+![Planétarium](images/screenplanet.jpg)
+
+---
+- ### Tri des planètes
+![Tri des planètes](images/screentri.png)
