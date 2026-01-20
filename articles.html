@@ -26,15 +26,28 @@
       </nav>
     </header>
 
-    <main id="bg_articles">
+    <div id="titre_filtre">
+        <select id="filtre-planetes">
+          <option value="all">Toutes</option>
+          <option value="trous">Trous noirs</option>
+          <option value="nebuleuse">Nébuleuses</option>
+          <option value="satellite">Satellites</option>
+          <option value="mission">Missions spatiales</option>
+          <option value="planete">Planètes</option>
+          <option value="galaxie">Galaxie</option>
+          <option value="etoile">Étoiles</option>
+          <option value="telescope">Télescopes</option>
+          <option value="exploration">Exploration spatiale</option>
+          <option value="technologie">Technologie spatiale</option>
+          <option value="cosmologie">Cosmologie</option>
+          <option value="extraterrestre">Vie extraterrestre</option>
+        </select>
 
-      <div class="tittle_page">
-        <h1>Retrouvez tous nos articles</h1>
-      </div>
-      <p>lalalala</p>
-      <p>testetst</p>
-      <h1>test</h1>
-      <div class="all_items"></div>
+
+    <div id="grille-articles" class="articles-grid"></div>
+
+
+    <script src="./js/index.js"></script>
 
     </main>
   </body>

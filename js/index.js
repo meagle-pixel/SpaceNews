@@ -183,3 +183,60 @@ if (containerS && filtre) {
   }
   chargerDonnees();
 }
+
+
+
+// Page "Nos articles" 
+
+
+async function lancerAffichage(){
+  try {
+    const reponse = await fetch('./js/data/articles.json');
+    const donnees = await reponse.json();
+
+    articlesData = donnees.articles;
+
+    const grille = document.getElementById("grille-articles");
+
+    articlesData.forEach(article => {
+      const carteHtml = `
+        <div class="card">
+          <img src="${article.image}" alt="${article.titre}">
+          <div class="card-infos">
+            <small>${article.categorie}</small>
+            <h3>${article.titre}</h3>
+            <p>${article.resume}</p>
+            <a href="details.html?id=${article.id}" class="btn">Lire l'article</a>
+          </div>
+        </div>
+      `;
+      grille.innerHTML += carteHtml;
+    });
+  } catch (erreur){
+    console.error("Impossible de charger les articles :", erreur);
+  }
+}
+
+lancerAffichage();
+
+
+filtre.addEventListener("change", (e) => {
+    const valeur = e.target.value;
+
+    const typeMapping = {
+      tellurique: "Tellurique",
+      gazeuse: "Géante gazeuse",
+      glace: "Géante de glace",
+    };
+
+    let filteredList;
+    if (valeur === "all") {
+      filteredList = planetesData;
+    } else if (valeur === "lunes") {
+      filteredList = planetesData.filter((p) => p.lunes > 0);
+    } else {
+      filteredList = planetesData.filter((p) => p.type === typeMapping[valeur]);
+    }
+
+    renderPlanetes(filteredList);
+  });
