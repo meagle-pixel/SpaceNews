@@ -102,9 +102,6 @@ function showErrorOrSuccess(msg, type = "error") {
   }, 3000);
 }
 
-
-
-
 // PAGE 4 SYSTEME SOLAIRE
 
 const url = window.location.origin + `/js/data/planetes.json`;
@@ -112,7 +109,6 @@ const containerS = document.getElementById("planetes-system");
 const info = document.getElementById("info-planete");
 const filtre = document.getElementById("filtre-planetes");
 let planetesData = []; //  Variable globale qui va stocker TOUTES les planètes (vide au début, elle sera remplie après le fetch)
-
 
 if (containerS && filtre) {
   //  Fonction qui prend en paramètre une liste de planètes à afficher (peut être toutes les planètes ou seulement les filtrées)
@@ -154,27 +150,22 @@ if (containerS && filtre) {
   // GESTION DU FILTRE
   filtre.addEventListener("change", (e) => {
     const valeur = e.target.value;
-    let filteredList = [];
 
-    switch (valeur) {
-      case "all":
-        filteredList = planetesData;
-        break;
-      case "tellurique":
-        filteredList = planetesData.filter((p) => p.type === "Tellurique");
-        break;
-      case "gazeuse":
-        filteredList = planetesData.filter((p) => p.type === "Géante gazeuse");
-        break;
-      case "glace":
-        filteredList = planetesData.filter((p) => p.type === "Géante de glace");
-        break;
-      case "lunes":
-        filteredList = planetesData.filter((p) => p.lunes > 0);
-        break;
-      default:
-        filteredList = planetesData;
+    const typeMapping = {
+      tellurique: "Tellurique",
+      gazeuse: "Géante gazeuse",
+      glace: "Géante de glace",
+    };
+
+    let filteredList;
+    if (valeur === "all") {
+      filteredList = planetesData;
+    } else if (valeur === "lunes") {
+      filteredList = planetesData.filter((p) => p.lunes > 0);
+    } else {
+      filteredList = planetesData.filter((p) => p.type === typeMapping[valeur]);
     }
+
     renderPlanetes(filteredList);
   });
 
@@ -192,3 +183,60 @@ if (containerS && filtre) {
   }
   chargerDonnees();
 }
+
+
+
+// Page "Nos articles" 
+
+
+async function lancerAffichage(){
+  try {
+    const reponse = await fetch('./js/data/articles.json');
+    const donnees = await reponse.json();
+
+    articlesData = donnees.articles;
+
+    const grille = document.getElementById("grille-articles");
+
+    articlesData.forEach(article => {
+      const carteHtml = `
+        <div class="card">
+          <img src="${article.image}" alt="${article.titre}">
+          <div class="card-infos">
+            <small>${article.categorie}</small>
+            <h3>${article.titre}</h3>
+            <p>${article.resume}</p>
+            <a href="details.html?id=${article.id}" class="btn">Lire l'article</a>
+          </div>
+        </div>
+      `;
+      grille.innerHTML += carteHtml;
+    });
+  } catch (erreur){
+    console.error("Impossible de charger les articles :", erreur);
+  }
+}
+
+lancerAffichage();
+
+
+filtre.addEventListener("change", (e) => {
+    const valeur = e.target.value;
+
+    const typeMapping = {
+      tellurique: "Tellurique",
+      gazeuse: "Géante gazeuse",
+      glace: "Géante de glace",
+    };
+
+    let filteredList;
+    if (valeur === "all") {
+      filteredList = planetesData;
+    } else if (valeur === "lunes") {
+      filteredList = planetesData.filter((p) => p.lunes > 0);
+    } else {
+      filteredList = planetesData.filter((p) => p.type === typeMapping[valeur]);
+    }
+
+    renderPlanetes(filteredList);
+  });

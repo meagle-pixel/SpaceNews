@@ -318,21 +318,22 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
 }
 
 .all_items article {
-  flex: 1 1 calc(25% - 20px); /* 4 articles par ligne (25% chacun) */
-  max-width: 400px; 
+  flex: 1 1 calc(25% - 20px);
+  /* 4 articles par ligne (25% chacun) */
+  max-width: 400px;
 }
 
 .all_items article img {
-  width: 100%; 
-  height: auto; 
-  display: block; 
+  width: 100%;
+  height: auto;
+  display: block;
 }
-  
+
 
 
 
@@ -612,14 +613,16 @@ body.body-solaire {
 
 .art {
   padding: 10px;
-  width: fit-content; /* permet à un élément de prendre uniquement la place nécessaire à son contenu. */
+  width: fit-content;
+  /* permet à un élément de prendre uniquement la place nécessaire à son contenu. */
 }
 
 .art img {
   width: 200px;
   cursor: pointer;
   border-radius: 50%;
-  aspect-ratio: 1/1; /* sert à forcer un élément à rester parfaitement carré.*/
+  aspect-ratio: 1/1;
+  /* sert à forcer un élément à rester parfaitement carré.*/
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -633,12 +636,13 @@ body.body-solaire {
 }
 
 #info-planete {
-  position: fixed; 
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   display: block;
-  margin: 50px auto 0 auto; /* Centré horizontalement avec auto */
+  margin: 50px auto 0 auto;
+  /* Centré horizontalement avec auto */
   max-width: 600px;
   width: 90%;
   background-color: rgba(0, 0, 0, 0.9);
@@ -650,12 +654,59 @@ body.body-solaire {
 }
 
 #info-planete:empty {
-  display: none; /* Masqué si vide */
+  display: none;
+  /* Masqué si vide */
 }
 
 article.art {
   text-align: center;
 }
+
+
+/* Page "Nos articles" */
+
+/* La grille principale */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
+  padding: 20px;
+}
+
+/* Un petit style pour les images pour qu'elles ne débordent pas */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Pour que l'image remplisse le cadre sans se déformer */
+  border-radius: 10px 8px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+
+
+/* RESPONSIVE pour page "Nos articles" */
+@media screen and (max-width: 1024px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 
 /* Querries Page 1 */
 
@@ -711,9 +762,11 @@ article.art {
     @media screen and (max-width: 768px) {
       #filtre-planetes {
         display: block;
-        margin: 0 auto; /* Centre horizontalement */
+        margin: 0 auto;
+        /* Centre horizontalement */
         position: relative;
-        top: 10px; /* Ajustez selon la distance sous le header */
+        top: 10px;
+        /* Ajustez selon la distance sous le header */
       }
     }
   }

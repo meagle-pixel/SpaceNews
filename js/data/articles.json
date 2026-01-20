@@ -1,0 +1,243 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "categorie": "Trous noirs",
+      "titre": "Les trous noirs : géants invisibles",
+      "resume": "Des objets cosmiques à la gravité extrême.",
+      "contenu": "Les trous noirs se forment après l’effondrement d’étoiles massives et déforment profondément l’espace-temps.",
+      "image": "images/trounoir.png",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 2,
+      "categorie": "Trous noirs",
+      "titre": "Sagittarius A*",
+      "resume": "Le trou noir au centre de la Voie lactée.",
+      "contenu": "Sagittarius A* est un trou noir supermassif situé au cœur de notre galaxie.",
+      "image": "images/sagita.png",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 3,
+      "categorie": "Nébuleuses",
+      "titre": "La nébuleuse d’Orion",
+      "resume": "Un berceau d’étoiles spectaculaire.",
+      "contenu": "La nébuleuse d’Orion est l’une des régions de formation stellaire les plus proches de la Terre.",
+      "image": "images/orion.webp",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 4,
+      "categorie": "Nébuleuses",
+      "titre": "La nébuleuse du Crabe",
+      "resume": "Vestige d’une supernova.",
+      "contenu": "Cette nébuleuse est le reste visible d’une étoile ayant explosé en 1054.",
+      "image": "images/crabe.png",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 5,
+      "categorie": "Satellites",
+      "titre": "Spoutnik 1",
+      "resume": "Le premier satellite artificiel.",
+      "contenu": "Lancé en 1957, Spoutnik 1 marque le début de l’ère spatiale.",
+      "image": "images/spoutnik.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 6,
+      "categorie": "Satellites",
+      "titre": "Les satellites GPS",
+      "resume": "Une technologie indispensable.",
+      "contenu": "Les satellites GPS permettent une localisation précise partout sur Terre.",
+      "image": "images/satellites.png",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 7,
+      "categorie": "Premières missions spatiales",
+      "titre": "Youri Gagarine",
+      "resume": "Le premier homme dans l’espace.",
+      "contenu": "En 1961, Youri Gagarine effectue le premier vol spatial habité.",
+      "image": "images/youri.png",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 8,
+      "categorie": "Premières missions spatiales",
+      "titre": "Apollo 11",
+      "resume": "Les premiers pas sur la Lune.",
+      "contenu": "Neil Armstrong et Buzz Aldrin marchent sur la Lune en 1969.",
+      "image": "images/apollo.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 9,
+      "categorie": "Planètes",
+      "titre": "Mars, la planète rouge",
+      "resume": "Une planète au cœur des recherches.",
+      "contenu": "Mars intrigue par son passé potentiellement habitable.",
+      "image": "images/mars.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 10,
+      "categorie": "Planètes",
+      "titre": "Jupiter, la géante gazeuse",
+      "resume": "La plus grande planète du système solaire.",
+      "contenu": "Jupiter possède une atmosphère violente et de nombreuses lunes.",
+      "image": "images/jupitere.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 11,
+      "categorie": "Exoplanètes",
+      "titre": "À la recherche d’autres mondes",
+      "resume": "Des planètes hors du système solaire.",
+      "contenu": "Les exoplanètes élargissent notre vision de l’univers.",
+      "image": "https://www.geekzone.fr/wp-content/uploads/2017/03/Illu-Exoplan%C3%A8te.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 12,
+      "categorie": "Exoplanètes",
+      "titre": "Les super-Terres",
+      "resume": "Des planètes rocheuses géantes.",
+      "contenu": "Les super-Terres pourraient être habitables selon certaines conditions.",
+      "image": "https://www.numerama.com/wp-content/uploads/2020/01/superterre.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 13,
+      "categorie": "Étoiles",
+      "titre": "Le Soleil",
+      "resume": "L’étoile de notre système.",
+      "contenu": "Le Soleil fournit l’énergie nécessaire à la vie sur Terre.",
+      "image": "https://cdn-tam.ouest-france.fr/media/cache/downscale_1200/assets/featured/le-soleil-le-soleil-est-notre-etoile.jpeg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 14,
+      "categorie": "Étoiles",
+      "titre": "Les supernovas",
+      "resume": "La mort spectaculaire des étoiles.",
+      "contenu": "Les supernovas enrichissent l’univers en éléments lourds.",
+      "image": "https://static.nationalgeographic.fr/files/styles/image_3200/public/NW_DLY_ds1802001_13_cassiopeia_A_animation_FR~~~~~fr~mux~~1.webp?w=760&h=428",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 15,
+      "categorie": "Galaxies",
+      "titre": "La Voie lactée",
+      "resume": "Notre galaxie.",
+      "contenu": "Elle contient des centaines de milliards d’étoiles.",
+      "image": "https://www.imagesdoc.com/wp-content/uploads/sites/33/2019/10/698-Milky-way-web.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 16,
+      "categorie": "Galaxies",
+      "titre": "Andromède",
+      "resume": "Notre galaxie voisine.",
+      "contenu": "Andromède entrera en collision avec la Voie lactée dans plusieurs milliards d’années.",
+      "image": "https://images.unsplash.com/photo-1757023896801-c3b3d42e3f09?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 17,
+      "categorie": "Télescopes",
+      "titre": "Hubble",
+      "resume": "Un œil sur l’univers.",
+      "contenu": "Hubble a révolutionné l’astronomie moderne.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HST-SM4.jpeg/1280px-HST-SM4.jpeg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 18,
+      "categorie": "Télescopes",
+      "titre": "James Webb",
+      "resume": "Observer l’univers primitif.",
+      "contenu": "Le télescope James Webb observe l’infrarouge avec une précision inégalée.",
+      "image": "https://wallyboston.com/wp-content/uploads/2023/10/james-webb-satellite.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 19,
+      "categorie": "Exploration spatiale",
+      "titre": "Les rovers martiens",
+      "resume": "Des robots sur Mars.",
+      "contenu": "Les rovers explorent la surface martienne depuis des décennies.",
+      "image": "https://www.numerama.com/content/uploads/2018/06/mars-exploration-rover-spirit-opportunity-surface-of-red-planet-nasa-image-posted-on-spaceflight-insider-1.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 20,
+      "categorie": "Exploration spatiale",
+      "titre": "Retour sur la Lune",
+      "resume": "Les missions Artemis.",
+      "contenu": "Les missions Artemis visent un retour durable sur la Lune.",
+      "image": "https://www.geo.fr/imgre/fit/~1~geo~2025~09~18~10442df3-9b71-45ab-99aa-9ce250fdec95.jpeg/1200x900/focusPoint/593%2C1022/l-homme-prepare-son-retour-sur-la-lune-mais-un-grand-danger-se-profile.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 21,
+      "categorie": "Technologies spatiales",
+      "titre": "Les fusées réutilisables",
+      "resume": "Une révolution spatiale.",
+      "contenu": "La réutilisation réduit drastiquement le coût des lancements.",
+      "image": "https://ariane.group/app/uploads/2024/05/Maiaspace-1920X1080-min.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 22,
+      "categorie": "Vie extraterrestre",
+      "titre": "Sommes-nous seuls ?",
+      "resume": "Une question fondamentale.",
+      "contenu": "La recherche de vie extraterrestre mobilise de nombreux scientifiques.",
+      "image": "https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2023/05/extraterrestre.jpg",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 23,
+      "categorie": "Cosmologie",
+      "titre": "Le Big Bang",
+      "resume": "La naissance de l’univers.",
+      "contenu": "Le Big Bang marque le début de l’expansion de l’univers.",
+      "image": "https://cnes.fr/sites/default/files/styles/native_format/public/2024-11/evolution-univers.jpg?itok=7j2IXxC6",
+      "date": "2026-01-20"
+    },
+
+    {
+      "id": 24,
+      "categorie": "Cosmologie",
+      "titre": "La matière noire",
+      "resume": "L’invisible qui structure l’univers.",
+      "contenu": "La matière noire représente la majorité de la masse de l’univers.",
+      "image": "https://lejournal.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/f0202767_72dpi.jpg",
+      "date": "2026-01-20"
+    }
+  ]
+}
