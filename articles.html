@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -20,13 +20,13 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="articles.html">Nos articles</a></li>
             <li><a href="ssolaire.html">Planétarium</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Inscrivez-vous</a></li>
           </ul>
         </div>
       </nav>
     </header>
-
-    <div id="titre_filtre">
+    <main>
+      <div id="titre_filtre">
         <select id="filtre-planetes">
           <option value="all">Toutes</option>
           <option value="trous">Trous noirs</option>
@@ -42,13 +42,11 @@
           <option value="cosmologie">Cosmologie</option>
           <option value="extraterrestre">Vie extraterrestre</option>
         </select>
+      </div>
 
+      <div id="grille-articles" class="articles-grid"></div>
 
-    <div id="grille-articles" class="articles-grid"></div>
-
-
-    <script src="./js/index.js"></script>
-
+      <script src="./js/index.js"></script>
     </main>
   </body>
 </html>

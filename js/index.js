@@ -10,9 +10,11 @@ if (form) {
     const email = document.getElementById("email").value.trim();
     const mobile = document.getElementById("mobile").value.trim();
     const message = document.getElementById("textarea").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mobilePattern = /^[0-9]{10}$/;
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
 
     let isValid = true;
 
@@ -36,8 +38,8 @@ if (form) {
       isValid = false;
     }
 
-    if (!message) {
-      document.getElementById("textarea").classList.add("error");
+    if (!password) {
+      document.getElementById("password").classList.add("error");
       isValid = false;
     }
 
@@ -54,13 +56,18 @@ if (form) {
 
     if (mobile && !mobilePattern.test(mobile)) {
       document.getElementById("mobile").classList.add("error");
-      showErrorOrSuccess(
-        "Votre numéro de téléphone doit contenir des chiffres (1,2,3...)"
-      );
+      showErrorOrSuccess("Votre numéro de téléphone doit contenir des chiffres (1,2,3...)");
       return;
     }
 
-    showErrorOrSuccess("Formulaire complété avec succés !", "success");
+    if (!passwordPattern.test(password)) {
+      document.getElementById("password").classList.add("error"); 
+      showErrorOrSuccess(
+        "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.");
+        return;
+    }
+
+    showErrorOrSuccess("Vous allez recevoir un mail de confirmation !", "success");
     form.reset();
   });
 
@@ -99,7 +106,7 @@ function showErrorOrSuccess(msg, type = "error") {
 
   setTimeout(() => {
     formMessage.style.display = "none";
-  }, 3000);
+  }, 5000);
 }
 
 // PAGE 4 SYSTEME SOLAIRE
@@ -133,7 +140,7 @@ if (containerS && filtre) {
         <p>Diamètre : ${p.diametre_km.toLocaleString("fr-FR")} km</p>
         <p>Masse : ${p.masse_kg} kg</p>
         <p>Distance Soleil : ${p.distance_au_soleil_km.toLocaleString(
-          "fr-FR"
+          "fr-FR",
         )} km</p>
         <p>Lune(s) : ${p.lunes}</p>
       `;
@@ -148,24 +155,24 @@ if (containerS && filtre) {
   }
 
   // GESTION DU FILTRE
-  
+
   filtre.addEventListener("change", (e) => {
-  let filteredList;
-  
-  if (e.target.value === "all") {
-    filteredList = planetesData;
-  } else if (e.target.value === "lunes") {
-    filteredList = planetesData.filter(p => p.lunes > 0);
-  } else if (e.target.value === "tellurique") {
-    filteredList = planetesData.filter(p => p.type === "Tellurique");
-  } else if (e.target.value === "gazeuse") {
-    filteredList = planetesData.filter(p => p.type === "Géante gazeuse");
-  } else if (e.target.value === "glace") {
-    filteredList = planetesData.filter(p => p.type === "Géante de glace");
-  }
-  
-  renderPlanetes(filteredList);
-});
+    let filteredList;
+
+    if (e.target.value === "all") {
+      filteredList = planetesData;
+    } else if (e.target.value === "lunes") {
+      filteredList = planetesData.filter((p) => p.lunes > 0);
+    } else if (e.target.value === "tellurique") {
+      filteredList = planetesData.filter((p) => p.type === "Tellurique");
+    } else if (e.target.value === "gazeuse") {
+      filteredList = planetesData.filter((p) => p.type === "Géante gazeuse");
+    } else if (e.target.value === "glace") {
+      filteredList = planetesData.filter((p) => p.type === "Géante de glace");
+    }
+
+    renderPlanetes(filteredList);
+  });
 
   async function chargerDonnees() {
     try {
@@ -182,21 +189,17 @@ if (containerS && filtre) {
   chargerDonnees();
 }
 
-
-
-// Page "Nos articles" 
-
+// Page "Nos articles"
 
 async function lancerAffichage() {
   try {
-    const reponse = await fetch('./js/data/articles.json');
+    const reponse = await fetch("./js/data/articles.json");
     const donnees = await reponse.json();
 
     const articlesData = donnees.articles;
     const grille = document.getElementById("grille-articles");
-    
 
-    articlesData.forEach(article => {
+    articlesData.forEach((article) => {
       const card = document.createElement("div");
       card.className = "card";
 
@@ -225,13 +228,9 @@ async function lancerAffichage() {
       card.append(img, infos);
       grille.appendChild(card);
     });
-
   } catch (erreur) {
     console.error("Impossible de charger les articles :", erreur);
   }
 }
 
 lancerAffichage();
-
-
-

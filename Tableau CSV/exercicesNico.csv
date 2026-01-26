@@ -1,58 +1,70 @@
 Donnée,Description,Type,Longueur,Contraintes,Exemple,Table
 user_id,Identifiant unique de l'utilisateur,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,users
-user_email,Adresse email de l'utilisateur,Texte court,100,Unique - Obligatoire,[jean.dupont@email.com](mailto:jean.dupont@email.com),users
+user_email,Adresse email de l'utilisateur,Texte court,100,Unique - Obligatoire,jean.dupont@email.com,users
 user_password,Mot de passe hashé,Texte court,255,Obligatoire,$2y$10$abcdef...,users
 user_first_name,Prénom de l'utilisateur,Texte court,100,Obligatoire,Jean,users
 user_last_name,Nom de famille de l'utilisateur,Texte court,100,Obligatoire,Dupont,users
-user_role,Rôle de l'utilisateur,Texte court,50,Valeur par défaut: user,admin,users
+user_role,Rôle de l'utilisateur,Texte court,50,Valeur par défaut : user,admin,users
 user_created_at,Date de création du compte,Date et heure,,Obligatoire,2025-01-21 14:30:00,users
 user_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 15:45:00,users
 user_last_login,Date de dernière connexion,Date et heure,,Optionnel,2025-01-21 16:20:00,users
-planet_id,Identifiant unique de la planète,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,planets
-planet_name,Nom de la planète,Texte court,100,Unique - Obligatoire,Saturne,planets
-planet_type,Type de la planète,Texte court,100,Obligatoire,Géante gazeuse,planets
-planet_diameter,Diamètre de la planète en km,Décimal,,Obligatoire,120536,planets
-planet_sun_distance,Distance au Soleil en km,Décimal,,Obligatoire,1429400000,planets
-planet_mass,Masse de la planète en kg,Texte court,50,Obligatoire,5.683e26,planets
-planet_moons_count,Nombre de lunes de la planète,Nombre entier,,Valeur par défaut: 0,146,planets
-planet_image_path,Chemin vers l'image de la planète,Texte court,255,Optionnel,/images/planets/saturn.jpg,planets
-planet_description,Description de la planète,Texte long,,Optionnel,Saturne est la sixième planète...,planets
-planet_orbital_period,Période de révolution en jours terrestres,Décimal,,Optionnel,10759.22,planets
-planet_rotation_period,Période de rotation en heures,Décimal,,Optionnel,10.7,planets
-planet_created_at,Date d'ajout dans la base,Date et heure,,Obligatoire,2025-01-21 14:30:00,planets
-planet_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 15:45:00,planets
-category_id,Identifiant unique de la catégorie,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,categories
-category_name,Nom de la catégorie,Texte court,100,Unique - Obligatoire,Planètes,categories
-category_description,Description de la catégorie,Texte long,,Optionnel,Articles liés aux planètes,categories
-article_id,Identifiant unique de l'article,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,articles
-article_title,Titre de l'article,Texte court,200,Obligatoire,Les Trous Noirs,articles
-article_resume,Résumé de l'article,Texte court,255,Obligatoire,Des objets cosmiques à la gravité extrême,articles
-article_content,Contenu de l'article,Texte long,,Obligatoire,Les trous noirs se forment après l'effondrement...,articles
-article_image_path,Chemin vers l'image de l'article,Texte court,255,Obligatoire,/images/articles/trous_noirs.jpg,articles
-id_user,Référence vers l'utilisateur auteur,Nombre entier,,Clé étrangère - Optionnel,1,articles
-article_published_date,Date de parution de l'article,Date,,Obligatoire,2025-08-10,articles
-article_created_at,Date de création dans la base,Date et heure,,Obligatoire,2025-01-21 14:30:00,articles
-article_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 15:45:00,articles
-article_status,Statut de l'article,Texte court,20,"Valeurs possibles : draft, published, archived (défaut : draft)",draft,articles
-article_views,Nombre de vues de l'article,Nombre entier,,Valeur par défaut : 0,154,articles
-comment_id,Identifiant unique du commentaire,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,comments
-id_article,Référence vers l'article,Nombre entier,,Clé étrangère - Obligatoire,5,comments
-comment_user_id,Référence vers l'utilisateur auteur,Nombre entier,,Clé étrangère - Obligatoire,3,comments
-comment_content,Contenu du commentaire,Texte long,1000,Obligatoire,Très intéressant cet article sur les trous noirs !,comments
-id_user,Référence vers commentaire parent (réponses),Nombre entier,,Clé étrangère - Optionnel,null,comments
-comment_status,Statut du commentaire,Texte court,20,Valeur par défaut: pending,approved,comments
-comment_created_at,Date de création du commentaire,Date et heure,,Obligatoire,2025-01-21 18:30:00,comments
-comment_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 19:00:00,comments
-form_id,Identifiant unique du formulaire,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,forms
-form_lastname,Nom dans le formulaire,Texte court,50,Obligatoire,Dupuis,forms
-form_firstname,Prénom dans le formulaire,Texte court,50,Obligatoire,Marie,forms
-form_email,Email dans le formulaire,Texte court,100,Obligatoire,[dupuis.marie@gmail.com](mailto:dupuis.marie@gmail.com),forms
-form_message, Message saisi dans le formulaire,Texte court, 150,Obligatoire,Je vous contacte au sujet de...,forms
-form_tel,Numéro de téléphone,Texte court,20,Obligatoire,+336552580,forms
-form_created_at,Date d'envoi du formulaire,Date et heure,,Obligatoire,2025-01-21 17:00:00,forms
+
 system_id,Identifiant unique du système,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,systems
 system_name,Nom du système,Texte court,100,Unique - Obligatoire,Système solaire,systems
 system_type,Type de système stellaire,Texte court,50,Obligatoire,Système à étoile unique,systems
 system_star_count,Nombre d'étoiles,Nombre entier,,Obligatoire,1,systems
 system_description,Description du système,Texte long,,Optionnel,Le système solaire est composé d'une étoile centrale et de planètes,systems
 system_created_at,Date de création,Date et heure,,Obligatoire,2025-01-21 14:30:00,systems
+
+planet_id,Identifiant unique de la planète,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,planets
+system_id,Référence vers le système stellaire,Nombre entier,,Clé étrangère - Obligatoire,1,planets
+planet_name,Nom de la planète,Texte court,100,Unique - Obligatoire,Saturne,planets
+planet_type,Type de la planète,Texte court,100,Obligatoire,Géante gazeuse,planets
+planet_diameter,Diamètre de la planète en km,Décimal,,Obligatoire,120536,planets
+planet_sun_distance,Distance à l’étoile centrale en km,Décimal,,Obligatoire,1429400000,planets
+planet_mass,Masse de la planète en kg,Décimal,,Obligatoire,5.683e26,planets
+planet_moons_count,Nombre de lunes,Nombre entier,,Valeur par défaut : 0,146,planets
+planet_image_path,Chemin vers l'image de la planète,Texte court,255,Optionnel,/images/planets/saturn.jpg,planets
+planet_description,Description de la planète,Texte long,,Optionnel,Saturne est la sixième planète...,planets
+planet_orbital_period,Période de révolution (jours),Décimal,,Optionnel,10759.22,planets
+planet_rotation_period,Période de rotation (heures),Décimal,,Optionnel,10.7,planets
+planet_created_at,Date d'ajout dans la base,Date et heure,,Obligatoire,2025-01-21 14:30:00,planets
+planet_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 15:45:00,planets
+
+category_id,Identifiant unique de la catégorie,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,categories
+category_name,Nom de la catégorie,Texte court,100,Unique - Obligatoire,Planètes,categories
+category_description,Description de la catégorie,Texte long,,Optionnel,Articles liés aux planètes,categories
+
+article_id,Identifiant unique de l'article,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,articles
+article_title,Titre de l'article,Texte court,200,Obligatoire,Les trous noirs,articles
+article_resume,Résumé de l'article,Texte court,255,Obligatoire,Des objets cosmiques à la gravité extrême,articles
+article_content,Contenu de l'article,Texte long,,Obligatoire,Les trous noirs se forment après l'effondrement...,articles
+article_image_path,Chemin vers l'image de l'article,Texte court,255,Obligatoire,/images/articles/trous_noirs.jpg,articles
+article_user_id,Référence vers l'utilisateur auteur,Nombre entier,,Clé étrangère - Optionnel,1,articles
+article_published_date,Date de parution de l'article,Date,,Obligatoire,2025-08-10,articles
+article_created_at,Date de création dans la base,Date et heure,,Obligatoire,2025-01-21 14:30:00,articles
+article_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 15:45:00,articles
+article_status,Statut de l'article,Texte court,20,Valeurs possibles : draft / published / archived,draft,articles
+article_views,Nombre de vues de l'article,Nombre entier,,Valeur par défaut : 0,154,articles
+
+article_category_id,Identifiant unique,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,article_categories
+article_category_article_id,Référence vers l'article,Nombre entier,,Clé étrangère - Obligatoire,1,article_categories
+article_category_category_id,Référence vers la catégorie,Nombre entier,,Clé étrangère - Obligatoire,2,article_categories
+
+comment_id,Identifiant unique du commentaire,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,comments
+comment_article_id,Référence vers l'article,Nombre entier,,Clé étrangère - Obligatoire,5,comments
+comment_user_id,Référence vers l'utilisateur auteur,Nombre entier,,Clé étrangère - Obligatoire,3,comments
+comment_parent_id,Référence vers le commentaire parent,Nombre entier,,Clé étrangère - Optionnel,null,comments
+comment_content,Contenu du commentaire,Texte long,,Obligatoire,Très intéressant !,comments
+comment_status,Statut du commentaire,Texte court,20,Valeur par défaut : pending,approved,comments
+comment_created_at,Date de création du commentaire,Date et heure,,Obligatoire,2025-01-21 18:30:00,comments
+comment_updated_at,Date de dernière modification,Date et heure,,Optionnel,2025-01-21 19:00:00,comments
+
+form_id,Identifiant unique du formulaire,Nombre entier,,Clé primaire - Auto-incrémenté - Obligatoire,1,forms
+form_lastname,Nom dans le formulaire,Texte court,50,Obligatoire,Dupuis,forms
+form_firstname,Prénom dans le formulaire,Texte court,50,Obligatoire,Marie,forms
+form_email,Email dans le formulaire,Texte court,100,Obligatoire,dupuis.marie@gmail.com,forms
+form_message,Message saisi dans le formulaire,Texte court,150,Obligatoire,Je vous contacte au sujet de...,forms
+form_tel,Numéro de téléphone,Texte court,20,Obligatoire,+336552580,forms
+form_password,Mot de passe du nouveau utilisateur,Date et heure,,Obligatoire,***,forms
+form_created_at,Date d'envoi du formulaire,Date et heure,,Obligatoire,2025-01-21 17:00:00,forms

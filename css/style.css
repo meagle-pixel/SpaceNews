@@ -303,7 +303,6 @@ h2 {
   padding: 5px;
 }
 
-
 /* PAGE "Nos articles" */
 
 #bg_articles {
@@ -333,27 +332,6 @@ h2 {
   height: auto;
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* PAGE 3 CONTACT */
 
@@ -623,7 +601,9 @@ body.body-solaire {
   border-radius: 50%;
   aspect-ratio: 1/1;
   /* sert à forcer un élément à rester parfaitement carré.*/
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .art img:hover {
@@ -662,14 +642,13 @@ article.art {
   text-align: center;
 }
 
-
 /* Page "Nos articles" */
 
 /* La grille principale */
 .articles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px; 
+  gap: 20px;
   padding: 20px;
 }
 
@@ -685,11 +664,10 @@ article.art {
   border: 1px solid #ddd;
   border-radius: 8px;
   display: flex;
+  text-align: center;
   flex-direction: column;
   background-color: #fff;
 }
-
-
 
 /* RESPONSIVE pour page "Nos articles" */
 @media screen and (max-width: 1024px) {
@@ -703,10 +681,6 @@ article.art {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
 
 /* Querries Page 1 */
 
