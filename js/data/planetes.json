@@ -8,7 +8,7 @@
       "masse_kg": 3.30e23,
       "distance_au_soleil_km": 57900000,
       "lunes": 0,
-      "img": "/images/mercure.png"
+      "img": "images/mercure.png"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "masse_kg": 4.87e24,
       "distance_au_soleil_km": 108200000,
       "lunes": 0,
-      "img": "/images/venus.png"
+      "img": "images/venus.png"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "masse_kg": 5.97e24,
       "distance_au_soleil_km": 149600000,
       "lunes": 1,
-      "img": "/images/terrebis.png"
+      "img": "images/terrebis.png"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "masse_kg": 6.42e23,
       "distance_au_soleil_km": 227900000,
       "lunes": 2,
-      "img": "/images/mars.png"
+      "img": "images/mars.png"
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "masse_kg": 1.90e27,
       "distance_au_soleil_km": 778500000,
       "lunes": 95,
-      "img": "/images/jupiter.png"
+      "img": "images/jupiter.png"
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "masse_kg": 5.68e26,
       "distance_au_soleil_km": 1434000000,
       "lunes": 145,
-      "img": "/images/saturn.png"
+      "img": "images/saturn.png"
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "masse_kg": 8.68e25,
       "distance_au_soleil_km": 2871000000,
       "lunes": 27,
-      "img": "/images/uranus.png"
+      "img": "images/uranus.png"
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "masse_kg": 1.02e26,
       "distance_au_soleil_km": 4495000000,
       "lunes": 14,
-      "img": "/images/neptune.png"
+      "img": "images/neptune.png"
     }
   ]
 }

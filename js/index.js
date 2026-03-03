@@ -14,7 +14,8 @@ if (form) {
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mobilePattern = /^[0-9]{10}$/;
-    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
+    const passwordPattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
 
     let isValid = true;
 
@@ -56,18 +57,24 @@ if (form) {
 
     if (mobile && !mobilePattern.test(mobile)) {
       document.getElementById("mobile").classList.add("error");
-      showErrorOrSuccess("Votre numéro de téléphone doit contenir des chiffres (1,2,3...)");
+      showErrorOrSuccess(
+        "Votre numéro de téléphone doit contenir des chiffres (1,2,3...)",
+      );
       return;
     }
 
     if (!passwordPattern.test(password)) {
-      document.getElementById("password").classList.add("error"); 
+      document.getElementById("password").classList.add("error");
       showErrorOrSuccess(
-        "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.");
-        return;
+        "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.",
+      );
+      return;
     }
 
-    showErrorOrSuccess("Vous allez recevoir un mail de confirmation !", "success");
+    showErrorOrSuccess(
+      "Vous allez recevoir un mail de confirmation !",
+      "success",
+    );
     form.reset();
   });
 
@@ -111,7 +118,7 @@ function showErrorOrSuccess(msg, type = "error") {
 
 // PAGE 4 SYSTEME SOLAIRE
 
-const url = window.location.origin + `/js/data/planetes.json`;
+const url = `./js/data/planetes.json`;
 const containerS = document.getElementById("planetes-system");
 const info = document.getElementById("info-planete");
 const filtre = document.getElementById("filtre-planetes");
@@ -158,7 +165,6 @@ if (containerS && filtre) {
 
   filtre.addEventListener("change", (e) => {
     let filteredList;
-
     if (e.target.value === "all") {
       filteredList = planetesData;
     } else if (e.target.value === "lunes") {
@@ -178,7 +184,6 @@ if (containerS && filtre) {
     try {
       const response = await fetch(url);
       const data = await response.json();
-
       planetesData = data.planetes; // On remplit notre variable globale
 
       renderPlanetes(planetesData); // Premier affichage (toutes les planètes)
@@ -191,46 +196,72 @@ if (containerS && filtre) {
 
 // Page "Nos articles"
 
+let articlesData = [];
+const filtreArticles = document.getElementById("filtre-articles");
+
 async function lancerAffichage() {
+  const grille = document.getElementById("grille-articles");
+  if (!grille) return;
+
   try {
     const reponse = await fetch("./js/data/articles.json");
     const donnees = await reponse.json();
+    articlesData = donnees.articles; 
 
-    const articlesData = donnees.articles;
-    const grille = document.getElementById("grille-articles");
-
-    articlesData.forEach((article) => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const img = document.createElement("img");
-      img.src = article.image;
-      img.alt = article.titre;
-
-      const infos = document.createElement("div");
-      infos.className = "card-infos";
-
-      const small = document.createElement("small");
-      small.textContent = article.categorie;
-
-      const h3 = document.createElement("h3");
-      h3.textContent = article.titre;
-
-      const p = document.createElement("p");
-      p.textContent = article.resume;
-
-      const a = document.createElement("a");
-      a.href = `details.html?id=${article.id}`;
-      a.className = "btn";
-      a.textContent = "Lire l'article";
-
-      infos.append(small, h3, p, a);
-      card.append(img, infos);
-      grille.appendChild(card);
-    });
+    afficherArticles(articlesData);
   } catch (erreur) {
     console.error("Impossible de charger les articles :", erreur);
   }
+}
+
+function afficherArticles(liste) {
+  const grille = document.getElementById("grille-articles");
+  if (!grille) return;
+  grille.innerHTML = "";
+
+  liste.forEach((article) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.src = article.image;
+    img.alt = article.titre;
+
+    const infos = document.createElement("div");
+    infos.className = "card-infos";
+
+    const small = document.createElement("small");
+    small.textContent = article.categorie;
+
+    const h3 = document.createElement("h3");
+    h3.textContent = article.titre;
+
+    const p = document.createElement("p");
+    p.textContent = article.resume;
+
+    const a = document.createElement("a");
+    a.href = `details.php?id=${article.id}`;
+    a.className = "btn";
+    a.textContent = "Lire l'article";
+
+    infos.append(small, h3, p, a);
+    card.append(img, infos);
+    grille.appendChild(card);
+  });
+}
+
+// Gestion du filtre
+if (filtreArticles) {
+  filtreArticles.addEventListener("change", (e) => {
+    if (e.target.value === "all") {
+      afficherArticles(articlesData);
+    } else {
+      const filtered = articlesData.filter(
+        (a) => a.categorie === e.target.value
+      );
+      afficherArticles(filtered);
+    }
+  });
 }
 
 lancerAffichage();
