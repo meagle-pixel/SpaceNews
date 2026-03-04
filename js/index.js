@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 
 if (form) {
   form.addEventListener("submit", function (e) {
-  
+    e.preventDefault();
 
     const lastName = document.getElementById("lastName").value.trim();
     const firstName = document.getElementById("firstName").value.trim();
@@ -83,11 +83,7 @@ if (form) {
       return;
     }
 
-    showErrorOrSuccess(
-      "Vous allez recevoir un mail de confirmation !",
-      "success",
-    );
-    form.reset();
+    form.submit();
   });
 
   // Pour enlever le border bottom rouge

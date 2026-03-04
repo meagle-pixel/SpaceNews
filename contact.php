@@ -68,8 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -86,24 +84,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <?php include 'includes/header.php'; ?>
 
-  <!-- <?php if ($succes): ?>
-    <p class="success">Inscription réussie !</p>
-  <?php endif; ?> -->
-
-  <?php if (!empty($erreurs)): ?>
-    <ul class="errors">
-      <?php foreach ($erreurs as $erreur): ?>
-        <li><?= htmlspecialchars($erreur) ?></li>
-      <?php endforeach; ?>
-    </ul>
-  <?php endif; ?>
 
   <main class="main-contact">
     <div class="container_contact">
       <form action="" method="POST">
         <h1 class="h1-contact">Contactez-nous !</h1>
         <input type="text" name="lastName" id="lastName" value="<?= htmlspecialchars($nom) ?>" placeholder="Entrez votre nom" />
-        <input type="text" name="firstName" id="firstName" value="<?= htmlspecialchars($prenom) ?>" placeholder="Entrez votre prénom" /> 
+        <input type="text" name="firstName" id="firstName" value="<?= htmlspecialchars($prenom) ?>" placeholder="Entrez votre prénom" />
         <input type="email" name="email" id="email" value="<?= htmlspecialchars($email) ?>" placeholder="email" />
         <input type="text" name="mobile" id="mobile" value="<?= htmlspecialchars($mobile) ?>" placeholder="Téléphone" />
         <input type="password" name="password" id="password" placeholder="Choisissez votre mot de passe" />
@@ -121,7 +108,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   </main>
 
-  <!-- <script src="js/index.js"></script> -->
+
+  <script src="js/index.js"></script>
+
+  <?php if (!empty($erreurs)): ?>
+    <script>
+      showErrorOrSuccess("<?= htmlspecialchars($erreurs[0]) ?>");
+    </script>
+  <?php endif; ?>
+
+  <?php if ($succes): ?>
+    <script>
+      showErrorOrSuccess("Inscription réussie !", "success");
+    </script>
+  <?php endif; ?>
 
   <?php include 'includes/footer.php'; ?>
 
