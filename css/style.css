@@ -15,6 +15,10 @@ main.main-accueil {
   padding: 20px;
 }
 
+#main-solaire {
+  flex:1;
+}
+
 /* HEADER */
 
 header.all {
@@ -542,6 +546,10 @@ footer.footer-contact {
 body.body-solaire {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background: url("../images/etoilee.jpg");
+  min-height: 100vh;          
+  display: flex;              
+  flex-direction: column;     
 }
 
 header.header-solaire {

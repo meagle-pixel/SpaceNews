@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <main class="main-contact">
     <div class="container_contact">
       <form action="" method="POST">
-        <h1 class="h1-contact">Contactez-nous !</h1>
+        <h1 class="h1-contact">Inscrivez-vous maintenant !</h1>
         <input type="text" name="lastName" id="lastName" value="<?= htmlspecialchars($nom) ?>" placeholder="Entrez votre nom" />
         <input type="text" name="firstName" id="firstName" value="<?= htmlspecialchars($prenom) ?>" placeholder="Entrez votre prénom" />
         <input type="email" name="email" id="email" value="<?= htmlspecialchars($email) ?>" placeholder="email" />
