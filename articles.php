@@ -1,3 +1,10 @@
+<?php 
+require_once 'includes/db.php';
+
+
+
+
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -37,7 +44,9 @@
     <div id="grille-articles" class="articles-grid"></div>
 
     <script src="./js/index.js"></script>
+
   </main>
+  
   <?php include 'includes/footer.php'; ?>
 
 </body>

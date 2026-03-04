@@ -10,7 +10,7 @@
         <li><a href="index.php">Accueil</a></li>
         <li><a href="articles.php">Nos articles</a></li>
         <li><a href="ssolaire.php">Planétarium</a></li>
-        <li><a href="contact.php">Inscrivez-vous</a></li>
+        <li><a href="contact.php">Rejoignez-nous !</a></li>
       </ul>
     </div>
   </nav>

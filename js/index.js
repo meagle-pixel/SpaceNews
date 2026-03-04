@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 
 if (form) {
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  
 
     const lastName = document.getElementById("lastName").value.trim();
     const firstName = document.getElementById("firstName").value.trim();
@@ -11,6 +11,7 @@ if (form) {
     const mobile = document.getElementById("mobile").value.trim();
     const message = document.getElementById("textarea").value.trim();
     const password = document.getElementById("password").value.trim();
+    const password2 = document.getElementById("password2").value.trim();
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const mobilePattern = /^[0-9]{10}$/;
@@ -44,6 +45,11 @@ if (form) {
       isValid = false;
     }
 
+    if (!password2) {
+      document.getElementById("password2").classList.add("error");
+      isValid = false;
+    }
+
     if (!isValid) {
       showErrorOrSuccess("Veuillez remplir tous les champs obligatoires !");
       return;
@@ -68,6 +74,12 @@ if (form) {
       showErrorOrSuccess(
         "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.",
       );
+      return;
+    }
+
+    if (password !== password2) {
+      document.getElementById("password2").classList.add("error");
+      showErrorOrSuccess("Les mots de passe ne correspondent pas !");
       return;
     }
 
@@ -206,7 +218,7 @@ async function lancerAffichage() {
   try {
     const reponse = await fetch("./js/data/articles.json");
     const donnees = await reponse.json();
-    articlesData = donnees.articles; 
+    articlesData = donnees.articles;
 
     afficherArticles(articlesData);
   } catch (erreur) {
@@ -257,7 +269,7 @@ if (filtreArticles) {
       afficherArticles(articlesData);
     } else {
       const filtered = articlesData.filter(
-        (a) => a.categorie === e.target.value
+        (a) => a.categorie === e.target.value,
       );
       afficherArticles(filtered);
     }

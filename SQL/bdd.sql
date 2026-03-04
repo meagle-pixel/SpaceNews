@@ -44,8 +44,6 @@ VALUES
 ('Vie extraterrestre', 'Articles sur la recherche de vie extraterrestre.'),
 ('Cosmologie', 'Articles sur la cosmologie et l\'évolution de l\'univers.');
 
-
-
 CREATE TABLE articles(
    article_id INT AUTO_INCREMENT PRIMARY KEY,
    article_title VARCHAR(200) NOT NULL,
@@ -64,10 +62,10 @@ CREATE TABLE articles(
 CREATE TABLE commentary(
    comment_id INT AUTO_INCREMENT PRIMARY KEY,
    comment_content TEXT NOT NULL,
-   comment_status VARCHAR(20) DEFAULT 'pending',
+   comment_status ENUM('pending','approved','rejected') NOT NULL DEFAULT 'pending',
    comment_created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
    comment_updated_at DATETIME,
-   comment_parent_id INT,
+   comment_parent_id INT NOT NULL,
    comment_article_id INT NOT NULL,
    comment_user_id INT NOT NULL,
    FOREIGN KEY(comment_parent_id) REFERENCES commentary(comment_id) ON DELETE CASCADE,
@@ -111,3 +109,8 @@ CREATE TABLE article_categories(
    FOREIGN KEY(article_id) REFERENCES articles(article_id) ON DELETE CASCADE,
    FOREIGN KEY(category_id) REFERENCES categories(category_id) ON DELETE CASCADE
 );
+
+ALTER TABLE users ADD COLUMN user_mobile VARCHAR(20) AFTER user_last_name;
+DESCRIBE users;
+
+SELECT * FROM users;
