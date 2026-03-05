@@ -16,7 +16,7 @@ main.main-accueil {
 }
 
 #main-solaire {
-  flex:1;
+  flex: 1;
 }
 
 /* HEADER */
@@ -418,6 +418,14 @@ nav {
   opacity: 0.8;
 }
 
+.btn_p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .container_contact form {
   width: 490px;
   height: 1000px;
@@ -536,6 +544,14 @@ nav {
   height: 24px;
 }
 
+.container_contact form.form-connexion {
+  height: auto;
+  min-height: auto;
+  padding: 40px 60px;
+  gap: 20px;
+}
+
+
 /* FOOTER */
 footer.footer-contact {
   background: #1c05a377;
@@ -547,9 +563,9 @@ body.body-solaire {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: url("../images/etoilee.jpg");
-  min-height: 100vh;          
-  display: flex;              
-  flex-direction: column;     
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header.header-solaire {
@@ -755,6 +771,8 @@ body.body-articles {
     min-width: 100%;
   }
 }
+
+
 
 /* Querry page 5 Planetarium */
 @media screen and (max-width: 768px) {
