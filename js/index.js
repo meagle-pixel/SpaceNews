@@ -1,7 +1,7 @@
 // ********** FORMULAIRE **********
 const form = document.querySelector("form");
 
-if (form) {
+if (form && !form.classList.contains('form-connexion')) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

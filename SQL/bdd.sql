@@ -114,3 +114,5 @@ ALTER TABLE users ADD COLUMN user_mobile VARCHAR(20) AFTER user_last_name;
 DESCRIBE users;
 
 SELECT * FROM users;
+
+UPDATE users SET user_role = 'admin' WHERE user_email = 'm.eagle@hotmail.fr';

@@ -1,12 +1,16 @@
 <header class="all">
 
-<div class="connexion">
-
-</div>
-
-
-
+  <div class="connexion">
+  </div>
   <nav>
+    <?php if (isset($_SESSION['user_id'])): ?>
+      <span style="color: white;">Bonjour <?= htmlspecialchars($_SESSION['user_first_name']) ?> |
+        <a href="deconnexion.php" style="color: lightblue;">Déconnexion</a>
+      </span>
+    <?php else: ?>
+      <a href="connexion.php" style="color: white;">Connexion</a>
+    <?php endif; ?>
+
     <div class="logo">
       <a href="index.php">
         <img src="images/logo_space.png" alt="logo du site" id="logo" />
