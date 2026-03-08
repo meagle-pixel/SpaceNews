@@ -6,6 +6,9 @@ body.accueil {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: url("../images/abstraitx.jpg") no-repeat center/cover;
+   min-height: 100vh;          
+  display: flex;              
+  flex-direction: column; 
 }
 
 main.main-accueil {
@@ -308,6 +311,10 @@ h2 {
 }
 
 /* PAGE "Nos articles" */
+
+main.main-articles {
+  flex: 1;
+}
 
 #bg_articles {
   background-color: white;

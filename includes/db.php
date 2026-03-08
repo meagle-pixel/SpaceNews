@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 try {
   $pdo = new PDO(
-    "mysql:host={$_ENV['AD_HOST']};dbname={$_ENV['AD_NAME']};charset=utf8",
+    "mysql:host={$_ENV['AD_HOST']};dbname={$_ENV['AD_NAME']};charset=utf8mb4",
     $_ENV['AD_USER'],
     $_ENV['AD_PASS']
   );

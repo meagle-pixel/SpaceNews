@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'includes/db.php';
 
 
@@ -15,13 +15,11 @@ require_once 'includes/db.php';
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-
-<?php include 'includes/header.php'; ?>
-
-
-
 <body class="accueil">
-  <main>
+  <?php include 'includes/header.php'; ?>
+
+  <main class="main-articles">
+    
     <div id="titre_filtre">
       <select id="filtre-articles">
         <option value="all">Toutes</option>
@@ -43,10 +41,10 @@ require_once 'includes/db.php';
 
     <div id="grille-articles" class="articles-grid"></div>
 
-    <script src="./js/index.js"></script>
-
   </main>
-  
+
+  <script src="./js/index.js"></script>
+
   <?php include 'includes/footer.php'; ?>
 
 </body>
