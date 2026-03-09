@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $hash = password_hash($password, PASSWORD_DEFAULT);
 
       $stmt = $pdo->prepare("INSERT INTO users (user_last_name, user_first_name, user_email, user_mobile, user_password) 
-                       VALUES (:nom, :prenom, :email, :mobile, :password)");
+      VALUES (:nom, :prenom, :email, :mobile, :password)");
       $stmt->execute([
         ':nom'      => $nom,
         ':prenom'   => $prenom,

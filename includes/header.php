@@ -5,7 +5,11 @@
   <nav>
     <?php if (isset($_SESSION['user_id'])): ?>
       <span style="color: white;">Bonjour <?= htmlspecialchars($_SESSION['user_first_name']) ?> |
-        <a href="deconnexion.php" style="color: lightblue;">Déconnexion</a>
+        <?php if ($_SESSION['user_role'] === 'admin'): ?>
+          <a href="/SpaceNews/admin/articlesAdmin.php" style="color: red;">Admin</a>
+        <?php endif; ?>
+
+        <a href="deconnexion.php" style="color: lightblue;">| Déconnexion</a>
       </span>
     <?php else: ?>
       <a href="connexion.php" style="color: white;">Connexion</a>
