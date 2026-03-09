@@ -22,10 +22,10 @@
     </div>
     <div class="list">
       <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="articles.php">Nos articles</a></li>
-        <li><a href="ssolaire.php">Planétarium</a></li>
-        <li><a href="inscription.php">Rejoignez-nous !</a></li>
+        <li><a href="/SpaceNews/index.php">Accueil</a></li>
+        <li><a href="/SpaceNews/articles.php">Nos articles</a></li>
+        <li><a href="/SpaceNews/ssolaire.php">Planétarium</a></li>
+        <li><a href="/SpaceNews/inscription.php">Rejoignez-nous !</a></li>
       </ul>
     </div>
   </nav>

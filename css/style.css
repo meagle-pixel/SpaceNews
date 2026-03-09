@@ -770,16 +770,6 @@ body.body-articles {
   transition: all 0.3s ease;
 }
 
-#create_article input[type="text"]:focus,
-#create_article input[type="date"]:focus,
-#create_article textarea:focus,
-#create_article select:focus {
-  outline: none;
-  border-color: #fff;
-  box-shadow: 0 0 10px rgba(245, 200, 66, 0.5);
-  background: rgba(240, 243, 240, 0.2);
-}
-
 #create_article textarea {
   min-height: 120px;
   resize: vertical;

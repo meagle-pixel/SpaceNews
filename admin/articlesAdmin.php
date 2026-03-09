@@ -9,9 +9,6 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,12 +23,23 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include '../includes/header.php'; ?>
 
-    <div class="admin-container">
-        <div class="admin-header">
-            <h1>Gestion des articles (Admin)</h1>
-            <a href="article-create.php" class="btn-create">+ Nouvel article</a>
+    <main class="main-admin">
+
+
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>Gestion des articles (Admin)</h1>
+                <a href="article-create.php" class="btn-create">+ Nouvel article</a> <br>
+                <a href="article-delete.php" class="btn-create">- Supprimer un article</a>
+            </div>
         </div>
-    </div>
+
+
+
+    </main>
+
+
+
 
 
 

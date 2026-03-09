@@ -5,7 +5,7 @@ require_once '../includes/db.php';
 $erreurs = [];
 $image_path = '';
 
-// Récupérer les catégories
+// je récupére les catégories
 $stmtCat = $pdo->query("SELECT * FROM categories");
 $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statut = $_POST['statut'] ?? 'draft';
     $selected_categories = $_POST['categories'] ?? [];
 
-    // Validations (DANS le if POST)
+    
     if (empty($title)) {
         $erreurs[] = "Veuillez entrer un titre";
     }
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erreurs[] = "Une image est requise";
     }
 
-    // Insertion en base si pas d'erreurs
+    // Insertion en BDD si pas d'erreurs
     if (empty($erreurs)) {
         try {
             $pdo->beginTransaction();

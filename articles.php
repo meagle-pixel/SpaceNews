@@ -25,10 +25,11 @@ if ($filtre === 'all') {
   $stmt->execute([':categorie' => $filtre]);
 }
 $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt = $pdo->query("SELECT * FROM categories ORDER BY category_name");
+$stmtCat = $pdo->query("SELECT * FROM categories ORDER BY category_name");
 $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -45,32 +46,39 @@ $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
   <main class="main-articles">
 
     <div id="titre_filtre">
-      <form action="" method="GET">
-        <select id="filtre-articles">
+      <form method="GET" action="">
+        <select name="categorie" id="filtre-articles" onchange="this.form.submit()">
           <option value="all">Toutes</option>
-          <option value="Trous noirs">Trous noirs</option>
-          <option value="Nébuleuses">Nébuleuses</option>
-          <option value="Satellites">Satellites</option>
-          <option value="Premières missions spatiales">Missions spatiales</option>
-          <option value="Planètes">Planètes</option>
-          <option value="Exoplanètes">Exoplanètes</option>
-          <option value="Étoiles">Étoiles</option>
-          <option value="Galaxies">Galaxies</option>
-          <option value="Télescopes">Télescopes</option>
-          <option value="Exploration spatiale">Exploration spatiale</option>
-          <option value="Technologies spatiales">Technologies spatiales</option>
-          <option value="Cosmologie">Cosmologie</option>
-          <option value="Vie extraterrestre">Vie extraterrestre</option>
+          <?php foreach ($categories as $cat): ?>
+            <option value="<?= htmlspecialchars($cat['category_name']) ?>"
+              <?= $filtre === $cat['category_name'] ? 'selected' : '' ?>>
+              <?= htmlspecialchars($cat['category_name']) ?>
+            </option>
+          <?php endforeach; ?>
         </select>
       </form>
-
     </div>
 
-    <div id="grille-articles" class="articles-grid"></div>
+    <div id="grille-articles" class="articles-grid">
+      <?php if (empty($articles)): ?>
+        <p style="color: white;">Aucun article pour le moment.</p>
+      <?php else: ?>
+        <?php foreach ($articles as $article): ?>
+          <div class="card">
+            <img src="<?= htmlspecialchars($article['article_image_path']) ?>"
+              alt="<?= htmlspecialchars($article['article_title']) ?>">
+            <div class="card-infos">
+              <small><?= htmlspecialchars($article['category_name'] ?? 'Non classé') ?></small>
+              <h3><?= htmlspecialchars($article['article_title']) ?></h3>
+              <p><?= htmlspecialchars($article['article_resume']) ?></p>
+              <a href="details.php?id=<?= $article['article_id'] ?>" class="btn">Lire l'article</a>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+    </div>
 
   </main>
-
-  <script src="./js/index.js"></script>
 
   <?php include 'includes/footer.php'; ?>
 
