@@ -2,27 +2,31 @@
 require_once 'auth-check.php';
 require_once '../includes/db.php';
 
+$id = $_GET['id'] ?? null;
 
-?>
+if (!$id) {
+    header('Location: articlesAdmin.php');
+    exit;
+}
 
-<!DOCTYPE html>
-<html lang="fr">
+try {
+    // Vérifie que l'article existe
+    $stmt = $pdo->prepare('SELECT * FROM articles WHERE article_id = :id');
+    $stmt->execute([':id' => $id]);
+    $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - articles</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+    if (!$article) {
+        header('Location: articlesAdmin.php');
+        exit;
+    }
 
-<body class="accueil">
+    // Supprimer l'article
+    $stmt = $pdo->prepare('DELETE FROM articles WHERE article_id = :id');
+    $stmt->execute([':id' => $id]);
 
-    <?php include '../includes/header.php'; ?>
+    header('Location: articlesAdmin.php?success=deleted');
+    exit;
 
-
-
-    <?php include '../includes/footer.php'; ?>
-
-</body>
-
-</html>
+} catch (PDOException $e) {
+    echo "Erreur : " . $e->getMessage();
+}

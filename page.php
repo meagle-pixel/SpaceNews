@@ -78,7 +78,7 @@ require_once 'includes/db.php';
           </p>
         </div>
 
-        <div class="text">
+        <div class="article_content">
           <h2 class="int">Une planète bleue</h2>
           <p>Notre planète se distingue par sa diversité remarquable. Les océans couvrent environ 71 % de sa surface,
             lui

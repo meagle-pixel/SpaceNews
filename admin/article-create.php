@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statut = $_POST['statut'] ?? 'draft';
     $selected_categories = $_POST['categories'] ?? [];
 
-    
+
     if (empty($title)) {
         $erreurs[] = "Veuillez entrer un titre";
     }
@@ -128,34 +128,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </ul>
             <?php endif; ?>
 
-            <form action="" method="POST" id="create_article" enctype="multipart/form-data">
-                <label for="titre">Titre :</label>
-                <input type="text" name="title">
-                <label for="resume">Résumé :</label>
-                <textarea name="resume" placeholder="Résumé de l'article ici"></textarea>
-                <label for="content">Contenu :</label>
-                <textarea name="content" id="content" placeholder="Contenu de l'article ici"></textarea>
+            <form action="" method="POST" enctype="multipart/form-data" id="create_article">
 
-                <label for="image">Image :</label>
+                <label>Titre :</label>
+                <input type="text" name="title" value="<?= htmlspecialchars($title ?? '') ?>">
+
+                <label>Résumé :</label>
+                <textarea name="resume"><?= htmlspecialchars($resume ?? '') ?></textarea>
+
+                <label>Contenu :</label>
+                <textarea name="content"><?= htmlspecialchars($content ?? '') ?></textarea>
+
+                <label>Image :</label>
                 <input type="file" name="image">
 
-                <label for="date">Date :</label>
-                <input type="date" name="date">
+                <label>Date :</label>
+                <input type="date" name="date" value="<?= htmlspecialchars($date ?? date('Y-m-d')) ?>">
 
                 <label>Statut :</label>
                 <select name="statut">
-                    <option value="draft">Brouillon</option>
-                    <option value="published">Publié</option>
+                    <option value="draft" <?= ($statut ?? '') === 'draft' ? 'selected' : '' ?>>Brouillon</option>
+                    <option value="published" <?= ($statut ?? '') === 'published' ? 'selected' : '' ?>>Publié</option>
                 </select>
 
-                <label for="category">Catégories :</label>
+                <label>Catégories :</label>
                 <div>
                     <?php foreach ($categories as $cat): ?>
                         <label>
-                            <input type="checkbox" name="categories[]" value="<?= $cat['category_id'] ?>">
+                            <input type="checkbox" name="categories[]" value="<?= $cat['category_id'] ?>"
+                                <?= in_array($cat['category_id'], $selected_categories ?? []) ? 'checked' : '' ?>>
                             <?= htmlspecialchars($cat['category_name']) ?>
                         </label>
-
                     <?php endforeach; ?>
                 </div>
 

@@ -17,7 +17,7 @@
 
     <div class="logo">
       <a href="index.php">
-        <img src="images/logo_space.png" alt="logo du site" id="logo" />
+        <img src="/SpaceNews/images/logo_space.png" alt="logo du site" id="logo" />
       </a>
     </div>
     <div class="list">

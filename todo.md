@@ -62,3 +62,24 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $erreurs[] = "Une image est requise";
 }
 ```
+
+
+Sans beginTransaction()
+
+Chaque requête est enregistrée immédiatement.
+phpUPDATE article      → OK, enregistré
+DELETE catégories   → OK, enregistré
+INSERT catégories   → ERREUR !
+Résultat : Article modifié, anciennes catégories supprimées, nouvelles catégories pas insérées = données cassées ❌
+
+Avec beginTransaction()
+Tout est mis en attente jusqu'au commit().
+phpbeginTransaction()
+UPDATE article      → en attente
+DELETE catégories   → en attente
+INSERT catégories   → ERREUR !
+rollBack()          → tout est annulé
+Résultat : Rien n'a changé, données intactes ✅
+
+En une phrase
+beginTransaction() garantit que tout réussit ou rien ne change — pas de données à moitié modifiées.

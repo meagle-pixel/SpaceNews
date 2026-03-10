@@ -13,9 +13,7 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Détruit la session
 session_destroy();
 
-// Redirige vers l'accueil
 header('Location: index.php');
 exit;

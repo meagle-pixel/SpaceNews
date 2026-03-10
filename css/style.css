@@ -303,7 +303,7 @@ h1.h1 {
   padding-left: 5px;
 }
 
-.text,
+.article_content,
 h2,
 .intro,
 h2 {
@@ -856,6 +856,67 @@ body.body-articles {
 
 
 
+/*PAGE ADMIN Suppression des articles*/
+
+body.accueil {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn-create {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f5c842;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-create:hover {
+    background: #fff;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: white;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-table th {
+    background: rgba(245, 200, 66, 0.3);
+    color: #f5c842;
+}
+
+.admin-table tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-table a {
+    color: #f5c842;
+    margin-right: 10px;
+}
+
+.admin-table a:hover {
+    color: white;
+}
+
+
+.main-admin {
+  flex:1;
+}
+
+
 /* RESPONSIVE pour page "Nos articles" */
 @media screen and (max-width: 1024px) {
   .articles-grid {
@@ -917,8 +978,6 @@ body.body-articles {
   }
 }
 
-
-
 /* Querry page 5 Planetarium */
 @media screen and (max-width: 768px) {
   #filtre-planetes {
@@ -930,7 +989,6 @@ body.body-articles {
     /* Ajustez selon la distance sous le header */
   }
 }
-
 
 #info-planet {
   position: fixed;
