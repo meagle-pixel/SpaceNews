@@ -3,9 +3,13 @@ require_once 'auth-check.php';
 require_once '../includes/db.php';
 
 $stmt = $pdo->query("
-    SELECT a.*, u.user_first_name, u.user_last_name 
+    SELECT a.*, u.user_first_name, u.user_last_name,
+    GROUP_CONCAT(c.category_name SEPARATOR ', ') AS categories
     FROM articles a 
     JOIN users u ON a.article_user_id = u.user_id 
+    LEFT JOIN article_categories ac ON a.article_id = ac.article_id
+    LEFT JOIN categories c ON ac.category_id = c.category_id
+    GROUP BY a.article_id
     ORDER BY a.article_created_at DESC
 ");
 $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -38,6 +42,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <th>ID</th>
                         <th>Titre</th>
                         <th>Auteur</th>
+                        <th>Catégories</th>
                         <th>Statut</th>
                         <th>Date</th>
                         <th>Actions</th>
@@ -54,6 +59,7 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $article['article_id'] ?></td>
                                 <td><?= htmlspecialchars($article['article_title']) ?></td>
                                 <td><?= htmlspecialchars($article['user_first_name'] . ' ' . $article['user_last_name']) ?></td>
+                                <td><?= htmlspecialchars($article['categories'] ?? 'Aucune') ?></td>
                                 <td><?= $article['article_status'] === 'published' ? 'Publié' : 'Brouillon' ?></td>
                                 <td><?= date('d/m/Y', strtotime($article['article_created_at'])) ?></td>
                                 <td>
