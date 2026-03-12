@@ -1,3 +1,14 @@
+<?php 
+require_once 'includes/db.php';
+
+
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,7 +30,7 @@
           <li><a href="index.html">Accueil</a></li>
           <li><a href="articles.html">Nos articles</a></li>
           <li><a href="ssolaire.html">Planétarium</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Inscrivez-vous</a></li>
         </ul>
       </div>
     </nav>
@@ -67,7 +78,7 @@
           </p>
         </div>
 
-        <div class="text">
+        <div class="article_content">
           <h2 class="int">Une planète bleue</h2>
           <p>Notre planète se distingue par sa diversité remarquable. Les océans couvrent environ 71 % de sa surface,
             lui

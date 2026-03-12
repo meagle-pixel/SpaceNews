@@ -1,0 +1,144 @@
+<?php 
+require_once 'includes/db.php';
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceNews</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="accueil">
+  <?php include 'includes/header.php'; ?>
+
+
+  <main class="main-accueil">
+    <!-- Titre et la barre de recherche -->
+
+    <section class="tittle_search">
+      <div class="tittle">
+        <h1 class="h1_no">À la UNE aujourd'hui</h1>
+      </div>
+      <div class="search">
+        <input type="search" name="q" id="site-search">
+        <button><img src="./images/search.jpg" alt="logo search"></button>
+      </div>
+    </section>
+
+    <!-- Article planètes telluriques -->
+
+    <section class="container">
+      <div class="h2">
+        <h2>Les planètes telluriques</h2>
+      </div>
+      <div class="earth_mars">
+        <article class="art_one">
+          <img
+            src="./images/earth.jpg"
+            alt="earth"
+            id="earth"
+            class="planete">
+          <h3>La Terre</h3>
+          <p>
+            <strong>Date</strong> : 25.07.2025 | <strong>Catégorie</strong> :
+            Astronomie | <strong>Auteur : John Amstrong</strong>
+          </p>
+          <p>La Terre est une planète tellurique</p>
+          <a href="./page.html" class="plus">En savoir plus</a>
+        </article>
+
+        <article class="art_two">
+          <img src="./images/mars.jpg" alt="Mars" id="mars" class="planete">
+          <h3>Mars</h3>
+          <p>
+            <strong>Date</strong> : 31.10.2025 | <strong>Catégorie</strong> :
+            Astronomie | <strong>Auteur : John Amstrong</strong>
+          </p>
+          <p>Mars est une planète tellurique</p>
+          <a
+            href="https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)"
+            class="plus">En savoir plus</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Article planètes gazeuses -->
+
+    <section class="container">
+      <div class="h2">
+        <h2>Les satelites</h2>
+      </div>
+      <div class="earth_mars">
+        <article class="art_one">
+          <img
+            src="./images/mooon.jpg"
+            alt="moon"
+            id="moon"
+            class="planete">
+          <h3>Lune</h3>
+          <p>
+            <strong>Date</strong> : 01.01.2025 | <strong>Catégorie</strong> :
+            Astronomie | <strong>Auteur : John Amstrong</strong>
+          </p>
+          <p>La Lune est un satelite de la Terre</p>
+          <a href="https://fr.wikipedia.org/wiki/Terre" class="plus">En savoir plus</a>
+        </article>
+
+        <article class="art_two">
+          <img
+            src="./images/europe.jpg"
+            alt="europe"
+            id="europe"
+            class="planete">
+          <h3>Europe</h3>
+          <p>
+            <strong>Date</strong> : 01.01.2025 | <strong>Catégorie</strong> :
+            Astronomie | <strong>Auteur : John Amstrong</strong>
+          </p>
+          <p>Europe est un satelite de Jupiter</p>
+          <a
+            href="https://fr.wikipedia.org/wiki/Mars_(plan%C3%A8te)"
+            class="plus">En savoir plus</a>
+        </article>
+      </div>
+    </section>
+
+
+    <div id="planet-info"></div>
+
+
+
+    <div class="h4">
+      <h4>OU NOUS TROUVER ?</h4>
+    </div>
+
+    <div class="embed-google-map">
+      <iframe
+        title="Carte Google Maps de Fuveau"
+        style="width:100%; height:400px; border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=13710+Fuveau,+France&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+    <div class="pagination">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+    </div>
+  </main>
+
+  <?php include 'includes/footer.php'; ?>
+
+  <script src="./js/index.js"></script>
+
+</body>
+
+</html>
