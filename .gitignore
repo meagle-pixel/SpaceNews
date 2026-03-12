@@ -1,0 +1,39 @@
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Archives & backups
+*.zip
+*.tar.gz
+*.sql.gz
+backup.sql
+.archive/
+
+# Dependances (installees via Composer/npm)
+vendor/
+node_modules/
+composer.lock
+
+# Cache & fichiers temporaires
+var/
+.phpunit.result.cache
+.php-cs-fixer.cache
+*.cache
+*.log
+
+# IDE & editeurs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Symfony (si applicable)
+/www/*/var/
+/www/*/vendor/
+/www/*/.env.local
+/www/*/.env.*.local
