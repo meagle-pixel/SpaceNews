@@ -9,10 +9,10 @@
           <a href="/admin/articlesAdmin.php" style="color: red;">Admin</a>
         <?php endif; ?>
 
-        <a href="deconnexion.php" style="color: lightblue;">| Déconnexion</a>
+        <a href="/deconnexion.php" style="color: lightblue;">| Déconnexion</a>
       </span>
     <?php else: ?>
-      <a href="connexion.php" style="color: white;">Connexion</a>
+      <a href="/connexion.php" style="color: white;">Connexion</a>
     <?php endif; ?>
 
     <div class="logo">
