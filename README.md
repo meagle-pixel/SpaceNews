@@ -102,7 +102,7 @@ Ce projet est réalisé dans le cadre du **projet fil rouge DWWM**, avec pour ob
 - Utilisation de GitHub 
 
 ## Déploiement 
-- Site en ligne : https://spacenews-proj.vercel.app/
+- Site en ligne : https://maximepau.alwaysdata.net/index.php
 - Lien repository : https://github.com/meagle-pixel/SpaceNews.git
 
 ---
