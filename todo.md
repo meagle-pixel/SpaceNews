@@ -83,3 +83,10 @@ Résultat : Rien n'a changé, données intactes ✅
 
 En une phrase
 beginTransaction() garantit que tout réussit ou rien ne change — pas de données à moitié modifiées.
+
+
+
+Création d'une base URL pour éviter tout probleme en localhost et sur alwaysdata : 
+Le résultat :
+En local → /SpaceNews/articles.php ✅
+Sur AlwaysData → /articles.php ✅
