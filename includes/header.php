@@ -6,26 +6,26 @@
     <?php if (isset($_SESSION['user_id'])): ?>
       <span style="color: white;">Bonjour <?= htmlspecialchars($_SESSION['user_first_name']) ?> |
         <?php if ($_SESSION['user_role'] === 'admin'): ?>
-          <a href="/admin/articlesAdmin.php" style="color: red;">Admin</a>
+          <a href="<?= BASE_URL ?>/admin/articlesAdmin.php" style="color: red;">Admin</a>
         <?php endif; ?>
 
-        <a href="/deconnexion.php" style="color: lightblue;">| Déconnexion</a>
+        <a href="<?= BASE_URL ?>/deconnexion.php" style="color: lightblue;">| Déconnexion</a>
       </span>
     <?php else: ?>
-      <a href="/connexion.php" style="color: white;">Connexion</a>
+      <a href="<?= BASE_URL ?>/connexion.php" style="color: white;">Connexion</a>
     <?php endif; ?>
 
     <div class="logo">
       <a href="index.php">
-        <img src="/images/logo_space.png" alt="logo du site" id="logo" />
+        <img src="<?= BASE_URL ?>/images/logo_space.png" alt="logo du site" id="logo" />
       </a>
     </div>
     <div class="list">
       <ul>
-        <li><a href="/index.php">Accueil</a></li>
-        <li><a href="/articles.php">Nos articles</a></li>
-        <li><a href="/ssolaire.php">Planétarium</a></li>
-        <li><a href="/inscription.php">Rejoignez-nous !</a></li>
+        <li><a href="<?= BASE_URL ?>/index.php">Accueil</a></li>
+        <li><a href="<?= BASE_URL ?>/articles.php">Nos articles</a></li>
+        <li><a href="<?= BASE_URL ?>/ssolaire.php">Planétarium</a></li>
+        <li><a href="<?= BASE_URL ?>/inscription.php">Rejoignez-nous !</a></li>
       </ul>
     </div>
   </nav>
