@@ -1,113 +1,152 @@
-# SpaceNews – Projet fil rouge AFPA
+# SpaceNews – AFPA Fil Rouge Project
 
-![Démonstration du projet](https://i.ibb.co/0jYKb3zq/screenplanet.jpg)
+*[Version française disponible ici](README.fr.md)*
 
+![Project demo](https://i.ibb.co/0jYKb3zq/screenplanet.jpg)
 
+## Project description
 
-## Description du projet
-
-**SpaceNews** est un site web dédié à la publication d'articles d'actualité liés à l'astronomie et au domaine spatial.  
-Ce projet est réalisé dans le cadre du **projet fil rouge DWWM**, avec pour objectif de mettre en pratique le développement web **full-stack** : front-end, back-end PHP et base de données MySQL.
+**SpaceNews** is a website dedicated to publishing news articles related to astronomy and space exploration.
+This project was built as part of the **DWWM fil rouge project**, with the goal of practicing full-stack web development: front-end, PHP back-end and MySQL database.
 
 ---
 
-## Compétences visées
+## Skills covered
 
 ### HTML
-- Structurer une page web de manière sémantique
-- Organiser le contenu (titres, sections, articles, images)
-- Mettre en place une navigation claire
+- Structure a web page using semantic elements
+- Organize content (headings, sections, articles, images)
+- Implement clear navigation
 
 ### CSS
-- Mettre en forme une interface web
-- Utiliser Flexbox et/ou Grid
-- Gérer le positionnement des éléments
-- Adapter l’affichage aux différents écrans (responsive design)
+- Style a web interface
+- Use Flexbox and/or Grid
+- Manage element positioning
+- Adapt the layout to different screen sizes (responsive design)
 
 ### JavaScript
-- Manipuler le DOM (`querySelector`, `querySelectorAll`, `getElementById`)
-- Gérer les événements utilisateur (`addEventListener`)
-- Utiliser des conditions (`if / else`)
-- Utiliser des boucles (`forEach`)
-- Charger et exploiter des données au format JSON (`fetch`, `.json()`)
-- Filtrer dynamiquement des éléments du DOM selon des critères utilisateur
-- Afficher / masquer des éléments dynamiquement (`style.display`)
-- Générer du HTML dynamiquement avec `innerHTML`
-- Utiliser les Promises et `async/await` pour les appels asynchrones
+- Manipulate the DOM (`querySelector`, `querySelectorAll`, `getElementById`)
+- Handle user events (`addEventListener`)
+- Use conditions (`if / else`)
+- Use loops (`forEach`)
+- Load and use JSON data (`fetch`, `.json()`)
+- Dynamically filter DOM elements based on user input
+- Show / hide elements dynamically (`style.display`)
+- Generate HTML dynamically with `innerHTML`
+- Use Promises and `async/await` for asynchronous calls
 
 ### PHP
-- Développer des pages dynamiques avec PHP
-- Gérer les formulaires (POST, validation, sécurité)
-- Gérer les sessions utilisateur (`$_SESSION`)
-- Implémenter un système d'authentification (connexion / déconnexion)
-- Gérer l'inscription des utilisateurs avec hashage du mot de passe (`password_hash`)
-- Vérifier les mots de passe de manière sécurisée (`password_verify`)
-- Upload et gestion de fichiers images côté serveur
-- Sécuriser les données avec `htmlspecialchars()`
-- Appliquer le pattern PRG (Post-Redirect-Get) pour éviter les doubles soumissions
-- Utiliser `header()` pour les redirections
-- Inclure des fichiers réutilisables (`require_once`) pour le header, footer et la BDD
-- Gérer les messages de succès/erreur via sessions
-- Utiliser Composer pour la gestion des dépendances
+- Build dynamic pages with PHP
+- Handle forms (POST, validation, security)
+- Manage user sessions (`$_SESSION`)
+- Implement an authentication system (login / logout)
+- Handle user registration with password hashing (`password_hash`)
+- Verify passwords securely (`password_verify`)
+- Upload and manage image files server-side
+- Secure data with `htmlspecialchars()`
+- Apply the PRG pattern (Post-Redirect-Get) to prevent double submissions
+- Use `header()` for redirects
+- Include reusable files (`require_once`) for header, footer and database
+- Manage success/error messages via sessions
+- Use Composer for dependency management
 
 ### MySQL & PDO
-- Concevoir et structurer une base de données relationnelle
-- Effectuer des requêtes SQL (SELECT, INSERT, UPDATE, DELETE)
-- Utiliser PDO avec des requêtes préparées pour éviter les injections SQL
-- Gérer des transactions (`beginTransaction`, `commit`, `rollBack`)
-- Gérer des relations entre tables (articles ↔ catégories via table de liaison)
-- Utiliser `lastInsertId()` pour récupérer l'id d'un enregistrement après insertion
-- Filtrer dynamiquement les données avec des clauses WHERE conditionnelles
-- Utiliser `fetchAll()` et `fetch()` avec `PDO::FETCH_ASSOC`
+- Design and structure a relational database
+- Write SQL queries (SELECT, INSERT, UPDATE, DELETE)
+- Use PDO with prepared statements to prevent SQL injections
+- Manage transactions (`beginTransaction`, `commit`, `rollBack`)
+- Manage relationships between tables (articles ↔ categories via junction table)
+- Use `lastInsertId()` to retrieve the id of a newly inserted record
+- Dynamically filter data with conditional WHERE clauses
+- Use `fetchAll()` and `fetch()` with `PDO::FETCH_ASSOC`
 
 ---
 
-## Fonctionnalités
+## Features
 
-### Espace public
-- **Affichage des articles** : liste paginée des articles publiés avec résumé et image
-- **Détail d'un article** : page dédiée avec contenu complet, catégorie et date
-- **Filtrage dynamique** : filtrage des articles par catégorie en JavaScript
-- **Planétarium interactif** : interface visuelle dédiée à l'exploration spatiale
-- **Tri des planètes** : filtrage dynamique des corps célestes via un fichier JSON
-- **Design responsive** : interface adaptée desktop et mobile
+### Public area
+- **Article listing**: paginated list of published articles with summary and image
+- **Article detail**: dedicated page with full content, category and date
+- **Dynamic filtering**: filter articles by category using JavaScript
+- **Interactive planetarium**: visual interface dedicated to space exploration
+- **Planet sorting**: dynamic filtering of celestial bodies via a JSON file
+- **Responsive design**: interface adapted for desktop and mobile
 
-### Espace administration (accès restreint)
-- **Authentification** : connexion / déconnexion sécurisée avec sessions PHP
-- **Gestion des articles** : CRUD complet (créer, lire, modifier, supprimer)
-- **Upload d'images** : ajout d'une image à chaque article (JPG, PNG, WEBP)
-- **Gestion des catégories** : association de catégories aux articles
-- **Transactions BDD** : sécurisation des insertions multiples avec rollback en cas d'erreur
+### Administration area (restricted access)
+- **Authentication**: secure login / logout with PHP sessions
+- **Article management**: full CRUD (create, read, update, delete)
+- **Image upload**: add an image to each article (JPG, PNG, WEBP)
+- **Category management**: associate categories to articles
+- **DB transactions**: secure multiple inserts with rollback on error
 
 ---
 
-## Stack technique
+## Tech stack
 
-| Technologie | Usage |
+| Technology | Usage |
 |---|---|
-| HTML / CSS | Structure et mise en forme |
-| JavaScript | Filtres dynamiques, DOM |
-| PHP 8 | Back-end, logique métier |
-| MySQL | Base de données |
-| PDO | Accès sécurisé à la BDD |
-| Docker | Environnement local (LAMP) |
-| AlwaysData | Hébergement en ligne |
+| HTML / CSS | Structure and styling |
+| JavaScript | Dynamic filters, DOM |
+| PHP 8 | Back-end, business logic |
+| MySQL | Database |
+| PDO | Secure database access |
+| Docker | Local environment (LAMP) |
+| AlwaysData | Online hosting |
 
 ---
 
-## Installation locale
+## Local installation
 
-### Prérequis
-- [Docker Desktop](https://www.docker.com) installé
-- Utilisation de GitHub 
+### Prerequisites
+- [Docker Desktop](https://www.docker.com) installed
+- Git installed
 
-## Déploiement 
-- Site en ligne : https://maximepau.alwaysdata.net/index.php
-- Lien repository : https://github.com/meagle-pixel/SpaceNews.git
+### Steps
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/meagle-pixel/SpaceNews.git
+cd SpaceNews
+```
+
+2. **Configure the environment**
+   - Copy `.env.example` to `.env`
+   - Fill in your database credentials:
+```
+DB_HOST=mysql
+DB_NAME=spacenews
+DB_USER=root
+DB_PASS=yourpassword
+```
+
+3. **Start the Docker containers**
+```bash
+docker-compose up -d
+```
+
+4. **Import the database**
+   - Open phpMyAdmin at `http://localhost:8080`
+   - Create a database named `spacenews`
+   - Import `SQL/bdd.sql`
+
+5. **Access the application**
+   - Public site: `http://localhost/SpaceNews`
+   - Admin panel: `http://localhost/SpaceNews/admin/articlesAdmin.php`
+
+### Test credentials
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | admin@spacenews.fr | yourpassword |
 
 ---
 
-## Structure du projet 
+## Deployment
+- Live site: https://maximepau.alwaysdata.net/index.php
+- Repository: https://github.com/meagle-pixel/SpaceNews.git
+
+---
+
+## Project structure
 
 ```text
 SPACENEWS/
@@ -135,12 +174,9 @@ SPACENEWS/
 ├── deconnexion.php
 ├── details.php
 ├── index.php
-├── index2.php
-├── info.php
 ├── inscription.php
-├── page.php
 ├── ssolaire.php
-├── .env
+├── .env.example
 ├── .gitignore
 ├── composer.json
 ├── composer.lock
@@ -150,40 +186,34 @@ SPACENEWS/
 └── README.md
 ```
 
-## Captures d’écran / Démonstrat
+---
 
-### Le formulaire
+## Screenshots
 
-![Formulaire](https://i.ibb.co/zTn00Snh/formulaire.png)
+### Article form
+
+![Form](https://i.ibb.co/zTn00Snh/formulaire.png)
 
 ---
 
-### Le planétarium
+### Planetarium
 
-![Planétarium](https://i.ibb.co/gZVDcdqc/planetarium.png)
-
----
-
-### Tri des planètes
-
-![Tri des planètes](https://i.ibb.co/23xwVFD4/filtre.png)
-
-## Auteur 
-
-Maxime Paulin - Promotion DWWM 2025-2026
+![Planetarium](https://i.ibb.co/gZVDcdqc/planetarium.png)
 
 ---
 
-Document créé pour la formation DWWM - Titre Professionnel Niveau 5  
-Référentiel RNCP37674 - Version 2026
+### Planet filter
 
+![Planet filter](https://i.ibb.co/23xwVFD4/filtre.png)
 
+---
 
+## Author
 
+Maxime Paulin – DWWM cohort 2025–2026
 
+---
 
-
-
-
-
+*Created for the DWWM training – Professional Title Level 5*
+*RNCP37674 – Version 2026*
 
