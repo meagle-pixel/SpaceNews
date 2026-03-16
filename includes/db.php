@@ -4,13 +4,6 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-if (file_exists(__DIR__ . '/../.env')) {
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
-  $dotenv->load();
-}
-
 
 // Détecte automatiquement l'environnement
 if ($_SERVER['HTTP_HOST'] === 'localhost') {
@@ -18,7 +11,6 @@ if ($_SERVER['HTTP_HOST'] === 'localhost') {
 } else {
   define('BASE_URL', '');
 }
-
 
 try {
   $pdo = new PDO(
@@ -30,3 +22,4 @@ try {
 } catch (PDOException $e) {
   die("Erreur de connexion : " . $e->getMessage());
 }
+?>

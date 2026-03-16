@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Gestion de l'image
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $allowed_types = ['image/jpeg', 'image/png', 'image/webp'];
-        $file_type = $_FILES['image']['type'];
+        $file_type = $_FILES['image']['type']; // On récupère le type MIME du fichier uploadé. Le type MIME c'est un identifiant qui décrit la nature du fichier 
 
         if (!in_array($file_type, $allowed_types)) {
             $erreurs[] = "Format d'image non autorisé (JPG, PNG, WEBP uniquement)";
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erreurs[] = "Une image est requise";
     }
 
-    // Insertion en BDD si pas d'erreurs
+
     if (empty($erreurs)) {
         try {
             $pdo->beginTransaction();
@@ -92,8 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             $pdo->commit();
-            header('Location: articlesAdmin.php?success=created');
-            exit;
         } catch (PDOException $e) {
             $pdo->rollBack();
             $erreurs[] = "Erreur : " . $e->getMessage();
@@ -140,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea name="content"><?= htmlspecialchars($content ?? '') ?></textarea>
 
                 <label>Image :</label>
-                <input type="file" name="image">
+                <input type="file" name="image"> 
 
                 <label>Date :</label>
                 <input type="date" name="date" value="<?= htmlspecialchars($date ?? date('Y-m-d')) ?>">

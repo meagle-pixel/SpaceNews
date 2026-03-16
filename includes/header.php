@@ -1,7 +1,5 @@
 <header class="all">
-
-  <div class="connexion">
-  </div>
+  
   <nav>
     <?php if (isset($_SESSION['user_id'])): ?>
       <span style="color: white;">Bonjour <?= htmlspecialchars($_SESSION['user_first_name']) ?> |
