@@ -63,12 +63,17 @@ $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?= $article['article_status'] === 'published' ? 'Publié' : 'Brouillon' ?></td>
                                 <td><?= date('d/m/Y', strtotime($article['article_created_at'])) ?></td>
                                 <td>
-                                    <a href="article-edit.php?id=<?= $article['article_id'] ?>" class="btn-edit">Modifier</a>
-                                    <a href="article-delete.php?id=<?= $article['article_id'] ?>"
-                                        class="btn-delete"
-                                        onclick="return confirm('Supprimer cet article ?')">
-                                        Supprimer
-                                    </a>
+                                    <?php if ($_SESSION['user_role'] === 'admin' || $article['article_user_id'] === $_SESSION['user_id']): ?>
+                                        <a href="article-edit.php?id=<?= $article['article_id'] ?>" class="btn-edit">Modifier</a>
+                                    <?php endif; ?>
+
+                                    <?php if ($_SESSION['user_role'] === 'admin'): ?>
+                                        <a href="article-delete.php?id=<?= $article['article_id'] ?>"
+                                            class="btn-delete"
+                                            onclick="return confirm('Supprimer cet article ?')">
+                                            Supprimer
+                                        </a>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

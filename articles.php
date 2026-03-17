@@ -6,11 +6,13 @@ $filtre = $_GET['categorie'] ?? 'all';
 
 if ($filtre === 'all') {
   $stmt = $pdo->query("
-        SELECT a.*, c.category_name 
+        SELECT a.*,
+        GROUP_CONCAT(c.category_name SEPARATOR ', ') AS categories
         FROM articles a
         LEFT JOIN article_categories ac ON a.article_id = ac.article_id
         LEFT JOIN categories c ON ac.category_id = c.category_id
         WHERE a.article_status = 'published'
+        GROUP BY a.article_id
         ORDER BY a.article_published_date DESC
     ");
 } else {
@@ -79,6 +81,7 @@ $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
   </main>
+  
 
   <?php include 'includes/footer.php'; ?>
 

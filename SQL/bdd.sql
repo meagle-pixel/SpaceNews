@@ -117,6 +117,6 @@ SELECT * FROM users;
 
 UPDATE users SET user_role = 'admin' WHERE user_email = 'm.eagle@hotmail.fr';
 
-SELECT * FROM articles;
+SELECT * FROM users;
 
 

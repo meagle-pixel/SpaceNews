@@ -6,9 +6,9 @@ body.accueil {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: url("../images/abstraitx.jpg") no-repeat center/cover;
-  min-height: 100vh;          
-  display: flex;              
-  flex-direction: column; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main.main-accueil {
@@ -558,7 +558,6 @@ nav {
   gap: 20px;
 }
 
-
 /* FOOTER */
 footer.footer-contact {
   background: #1c05a377;
@@ -729,7 +728,7 @@ body.body-articles {
 
 .admin_container h1 {
   color: #f5c842;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 2.5rem;
   margin-bottom: 30px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -748,7 +747,7 @@ body.body-articles {
 
 #create_article label {
   color: #f5c842;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 8px;
@@ -766,13 +765,15 @@ body.body-articles {
   background: rgba(192, 7, 7, 0.1);
   color: white;
   font-size: 1rem;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   transition: all 0.3s ease;
 }
 
 #create_article textarea {
   min-height: 120px;
-  resize: vertical;
+  resize: none;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #create_article select {
@@ -787,7 +788,7 @@ body.body-articles {
 /* Style des checkboxes catégories */
 #create_article > div {
   display: grid;
- grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 10px;
   color: yellow;
@@ -809,7 +810,6 @@ body.body-articles {
 #create_article > div label:hover {
   background: rgba(245, 200, 66, 0.4);
 }
-
 
 #create_article input[type="checkbox"] {
   accent-color: #f5c842;
@@ -854,67 +854,224 @@ body.body-articles {
   margin: 5px 0;
 }
 
-
-
 /*PAGE ADMIN Suppression des articles*/
 
 body.accueil {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .btn-create {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #f5c842;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f5c842;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 .btn-create:hover {
-    background: #fff;
+  background: #fff;
 }
 
 .admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    color: white;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: white;
 }
 
 .admin-table th,
 .admin-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .admin-table th {
-    background: rgba(245, 200, 66, 0.3);
-    color: #f5c842;
+  background: rgba(245, 200, 66, 0.3);
+  color: #f5c842;
 }
 
 .admin-table tr:hover {
-    background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .admin-table a {
-    color: #f5c842;
-    margin-right: 10px;
+  color: #f5c842;
+  margin-right: 10px;
 }
 
 .admin-table a:hover {
+  color: white;
+}
+
+.main-admin {
+  flex: 1;
+}
+
+/* Page usersAdmin */
+
+/* PAGE ADMIN - Gestion des rôles */
+
+.panel-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.panel-admin h1 {
+    color: #f5c842;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.panel-role {
+    width: 90%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(245, 200, 66, 0.3);
+}
+
+.panel-role th {
+    background: rgba(245, 200, 66, 0.3);
+    color: #f5c842;
+    padding: 15px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.panel-role td {
+    padding: 12px 15px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-role tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.panel-role select {
+    padding: 8px 12px;
+    border: 2px solid #f5c842;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.panel-role select option {
+    background: #333;
     color: white;
 }
 
-
-.main-admin {
-  flex:1;
+.panel-role button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background: #f5c842;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.panel-role button:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.panel-role form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-role label {
+    color: #f5c842;
+    font-weight: bold;
+}
+
+/*HEADER ADMIN */
+
+.btn-nav {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+}
+
+.btn-admin {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff4444;
+    border: 1px solid #ff4444;
+}
+
+.btn-admin:hover {
+    background: #ff4444;
+    color: white;
+}
+
+.btn-roles {
+    background: rgba(245, 200, 66, 0.2);
+    color: #f5c842;
+    border: 1px solid #f5c842;
+}
+
+.btn-roles:hover {
+    background: #f5c842;
+    color: black;
+}
+
+.btn-autor {
+    background: rgba(255, 165, 0, 0.2);
+    color: orange;
+    border: 1px solid orange;
+}
+
+.btn-autor:hover {
+    background: orange;
+    color: white;
+}
+
+.btn-deconnexion {
+    background: rgba(100, 180, 230, 0.2);
+    color: lightblue;
+    border: 1px solid lightblue;
+}
+
+.btn-deconnexion:hover {
+    background: lightblue;
+    color: black;
+}
+
+
+.btn-connexion {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-connexion:hover {
+    background: white;
+    color: black;
+}
+
+
 
 
 /* RESPONSIVE pour page "Nos articles" */
