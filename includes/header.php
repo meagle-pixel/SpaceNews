@@ -1,16 +1,21 @@
 <header class="all">
-  
+
   <nav>
     <?php if (isset($_SESSION['user_id'])): ?>
+
       <span style="color: white;">Bonjour <?= htmlspecialchars($_SESSION['user_first_name']) ?> |
+
         <?php if ($_SESSION['user_role'] === 'admin'): ?>
-          <a href="<?= BASE_URL ?>/admin/articlesAdmin.php" style="color: red;">Admin</a>
+          <a href="<?= BASE_URL ?>/admin/articlesAdmin.php" class="btn-nav btn-admin">Admin</a>
+          <a href="<?= BASE_URL ?>/admin/usersAdmin.php" class="btn-nav btn-roles">Rôles</a>
+        <?php elseif ($_SESSION['user_role'] === 'autor'): ?>
+          <a href="<?= BASE_URL ?>/admin/articlesAdmin.php" class="btn-nav btn-autor">Mes articles</a>
         <?php endif; ?>
 
-        <a href="<?= BASE_URL ?>/deconnexion.php" style="color: lightblue;">| Déconnexion</a>
+        <a href="<?= BASE_URL ?>/deconnexion.php" class="btn-nav btn-deconnexion">Déconnexion</a>
       </span>
     <?php else: ?>
-      <a href="<?= BASE_URL ?>/connexion.php" style="color: white;">Connexion</a>
+      <a href="<?= BASE_URL ?>/connexion.php" class="btn-nav btn-connexion">Se connecter</a>
     <?php endif; ?>
 
     <div class="logo">

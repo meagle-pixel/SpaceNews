@@ -1,7 +1,11 @@
 // ********** FORMULAIRE **********
 const form = document.querySelector("form");
 
-if (form && !form.classList.contains('form-connexion')) {
+if (
+  form &&
+  !form.classList.contains("form-connexion") &&
+  document.getElementById("lastName")
+) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -204,72 +208,19 @@ if (containerS && filtre) {
 
 // Page "Nos articles"
 
-let articlesData = [];
-const filtreArticles = document.getElementById("filtre-articles");
+// DOMcontentLoaded garantit que le code ne s'exécute qu'une fois que toute la page est chargée.
 
-async function lancerAffichage() {
-  const grille = document.getElementById("grille-articles");
-  if (!grille) return;
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('#create_article textarea').forEach(textarea => {
+        // Déclenche le redimensionnement au chargement
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
 
-  try {
-    const reponse = await fetch("./js/data/articles.json");
-    const donnees = await reponse.json();
-    articlesData = donnees.articles;
-
-    afficherArticles(articlesData);
-  } catch (erreur) {
-    console.error("Impossible de charger les articles :", erreur);
-  }
-}
-
-function afficherArticles(liste) {
-  const grille = document.getElementById("grille-articles");
-  if (!grille) return;
-  grille.innerHTML = "";
-
-  liste.forEach((article) => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const img = document.createElement("img");
-    img.src = article.image;
-    img.alt = article.titre;
-
-    const infos = document.createElement("div");
-    infos.className = "card-infos";
-
-    const small = document.createElement("small");
-    small.textContent = article.categorie;
-
-    const h3 = document.createElement("h3");
-    h3.textContent = article.titre;
-
-    const p = document.createElement("p");
-    p.textContent = article.resume;
-
-    const a = document.createElement("a");
-    a.href = `details.php?id=${article.id}`;
-    a.className = "btn";
-    a.textContent = "Lire l'article";
-
-    infos.append(small, h3, p, a);
-    card.append(img, infos);
-    grille.appendChild(card);
-  });
-}
-
-// Gestion du filtre
-if (filtreArticles) {
-  filtreArticles.addEventListener("change", (e) => {
-    if (e.target.value === "all") {
-      afficherArticles(articlesData);
-    } else {
-      const filtered = articlesData.filter(
-        (a) => a.categorie === e.target.value,
-      );
-      afficherArticles(filtered);
-    }
-  });
-}
-
-lancerAffichage();
+        // Et à chaque frappe
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    });
+});
+// Permet de modifier automatiquement le textarea, de sorte à ce qu'on puisse voir tout le texte saisi.

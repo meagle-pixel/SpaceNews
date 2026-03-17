@@ -20,6 +20,10 @@ try {
         exit;
     }
 
+    if($_SESSION['user_role'] !== 'admin' && $article['article_user_id'] !== $_SESSION['user_id']) {
+        header ('Location: articlesAdmin.php');
+    }
+
     // Ici je récupére les catégories
     $stmtCat = $pdo->query('SELECT * FROM categories ORDER BY category_name');
     $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
@@ -175,6 +179,8 @@ try {
 
 
     </main>
+
+     <script src="../js/index.js"></script>
 
     <?php include '../includes/footer.php'; ?>
 

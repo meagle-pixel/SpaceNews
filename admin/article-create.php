@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <textarea name="content"><?= htmlspecialchars($content ?? '') ?></textarea>
 
                 <label>Image :</label>
-                <input type="file" name="image"> 
+                <input type="file" name="image">
 
                 <label>Date :</label>
                 <input type="date" name="date" value="<?= htmlspecialchars($date ?? date('Y-m-d')) ?>">
@@ -164,9 +164,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
 
-
     </main>
 
+    <script src="../js/index.js"></script>
 
     <?php include '../includes/footer.php'; ?>
 
