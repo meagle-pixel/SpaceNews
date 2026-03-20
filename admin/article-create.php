@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $statut = $_POST['statut'] ?? 'draft';
     $selected_categories = $_POST['categories'] ?? [];
 
+    header('Location: articlesAdmin.php');
 
     if (empty($title)) {
         $erreurs[] = "Veuillez entrer un titre";

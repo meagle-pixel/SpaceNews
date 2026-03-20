@@ -17,7 +17,7 @@ if ($filtre === 'all') {
     ");
 } else {
   $stmt = $pdo->prepare("
-        SELECT a.*, c.category_name 
+        SELECT a.*, c.category_name AS categories
         FROM articles a
         LEFT JOIN article_categories ac ON a.article_id = ac.article_id
         LEFT JOIN categories c ON ac.category_id = c.category_id
@@ -70,7 +70,7 @@ $categories = $stmtCat->fetchAll(PDO::FETCH_ASSOC);
             <img src="<?= htmlspecialchars($article['article_image_path']) ?>"
               alt="<?= htmlspecialchars($article['article_title']) ?>">
             <div class="card-infos">
-              <small><?= htmlspecialchars($article['category_name'] ?? 'Non classé') ?></small>
+              <small><?= htmlspecialchars($article['categories'] ?? 'Non classé') ?></small>
               <h3><?= htmlspecialchars($article['article_title']) ?></h3>
               <p><?= htmlspecialchars($article['article_resume']) ?></p>
               <a href="details.php?id=<?= $article['article_id'] ?>" class="btn">Lire l'article</a>
